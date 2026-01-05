@@ -1,0 +1,17 @@
+{
+    "form.validation.min-length": "Minimum {0} characters",
+    "form.validation.max-length": "Maximum {0} characters",
+    "form.validation.min": "Value must be greater than or equal to {0}",
+    "form.validation.max": "Value must be less than or equal to {0}",
+    "form.validation.email": "Enter a valid email",
+    "form.validation.url": "Enter a valid URL",
+    "form.validation.phone": "Enter a valid phone number",
+    "form.validation.numeric": "Only numbers are allowed",
+    "form.validation.alphabetic": "Only letters are allowed",
+    "form.validation.alphanumeric": "Only letters and numbers are allowed",
+    "form.validation.strong_password": "Password must be at least 8 characters with uppercase, lowercase, number and special character",
+    "form.validation.date-iso": "Enter a valid date (YYYY-MM-DD)",
+    "form.validation.dni-ar": "Enter a valid DNI (7 or 8 digits)",
+    "form.validation.cuit-ar": "Enter a valid CUIT (format: XX-XXXXXXXX-X)",
+    "form.validation.required": "This field is required"
+}

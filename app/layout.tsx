@@ -1,36 +1,50 @@
 import Footer from "@/components/layout/footer/Footer";
 import Navbar from "@/components/layout/navbar/Navbar";
+import NavigationErrorProvider from "@/context/error/NavigationErrorProvider";
 import LanguageProvider from "@/context/language/LanguageProvider";
+import ThemeProvider from "@/context/theme/ThemeProvider";
+import ToastProvider from "@/context/toast/ToastProvider";
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Oswald, Roboto } from "next/font/google";
 import { PropsWithChildren } from "react";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const sora = Sora({
+export const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
+});
+
+export const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
-  variable: "--font-sora"
+  variable: "--font-roboto"
 });
 
 export const metadata: Metadata = {
-  title: "DEMO",
-  description: "This is a Demo App, please change this.",
+  title: "Klass - Your modern classroom",
+  description: "Your modern classroom.",
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <ThemeProvider>
         <LanguageProvider>
-          <Navbar />
-          <div className="min-h-screen bg-gradient-to-br from-primary-100 via-primary-50 to-primary-100 dark:from-black dark:via-accent-950 dark:to-black">
-            {children}
-          </div>
-          <Footer />
+          <NavigationErrorProvider>
+            <body className={`${inter.className} ${oswald.variable} h-screen flex flex-col`}>
+              <ToastProvider>
+                <Navbar />
+                <main className="font-roboto flex-1 overflow-x-hidden overflow-y-auto bg-gradient-to-bl sm:bg-gradient-to-l from-primary-100 via-secondary-100 to-primary-100 dark:from-primary-950 dark:via-secondary-950 dark:to-primary-950 scrollbar-thin scrollbar-thumb-primary-400 scrollbar-track-primary-100 hover:scrollbar-thumb-primary-500 dark:scrollbar-thumb-primary-800 dark:scrollbar-track-primary-950 dark:hover:scrollbar-thumb-primary-950">
+                  {children}
+                </main>
+                <Footer />
+              </ToastProvider>
+            </body>
+          </NavigationErrorProvider>
         </LanguageProvider>
-      </body>
-    </html>
+      </ThemeProvider>
+    </html >
   );
 }

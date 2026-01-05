@@ -1,6 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-import ROUTES from "./constants/routes";
+import ROUTES from "./routes/client/routes";
 
 export async function proxy(request: NextRequest) {
     let response = NextResponse.next({
@@ -38,7 +38,7 @@ export async function proxy(request: NextRequest) {
     const user = session?.user;
 
     if (user && request.nextUrl.pathname.startsWith(ROUTES.LOGIN)) {
-        return NextResponse.redirect(new URL(ROUTES.HOME, request.url));
+        return NextResponse.redirect(new URL(ROUTES.USER.ROOT, request.url));
     }
 
     return response;

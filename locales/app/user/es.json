@@ -1,0 +1,18 @@
+{
+    "user.layout.tabs.about": "Sobre mí",
+    "user.layout.tabs.institutions": "Instituciones",
+    "user.layout.tabs.courses": "Cursos",
+    "user.layout.tabs.submissions": "Entregas",
+    "user.layout.tabs.notes": "Apuntes",
+    "user.home.title": "Inicio del usuario",
+    "user.institutions.title": "Instituciones del usuario",
+    "user.submissions.title": "Entregas del usuario",
+    "user.notes.title": "Apuntes del usuario",
+    "user.courses.title": "Mis cursos",
+    "user.courses.tabs.teacher": "Docente",
+    "user.courses.tabs.teacher-assistant": "Ayudante",
+    "user.courses.tabs.student": "Estudiante",
+    "user.courses.teacher.title": "Cursos como docente",
+    "user.courses.teacher-assistant.title": "Cursos como ayudante",
+    "user.courses.student.title": "Cursos como estudiante"
+}

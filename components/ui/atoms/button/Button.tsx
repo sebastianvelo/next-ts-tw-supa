@@ -1,5 +1,5 @@
 "use client"
-import useI18N from "@/hooks/app/useI18N";
+import useI18N from "@/hooks/lang/useI18N";
 import React from "react";
 import getStyle from "./Button.styles";
 import { ButtonStyleProps } from "./types";

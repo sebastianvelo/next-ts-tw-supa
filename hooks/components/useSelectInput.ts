@@ -1,6 +1,6 @@
 "use client"
+import useClickOutside from "@/hooks/app/useClickOutside";
 import { useEffect, useRef, useState } from "react";
-import useClickOutside from "../app/useClickOutside";
 
 export interface SelectOption {
     label: string;

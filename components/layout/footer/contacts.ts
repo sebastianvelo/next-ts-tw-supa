@@ -12,7 +12,7 @@ const contacts = [
     {
         id: "github",
         name: "Github",
-        url: "https://github.com/sebastianvelo/tcp-notes",
+        url: "https://github.com/sebastianvelo/klass",
         Icon: GitHubIcon
     },
     {

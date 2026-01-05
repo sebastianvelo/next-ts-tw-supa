@@ -1,3 +1,4 @@
+import useI18N from "@/hooks/lang/useI18N";
 import React from "react";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -6,6 +7,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: React.FC<InputProps> = ({ label, error, className = "", ...props }) => {
+    const { t } = useI18N();
+
     return (
         <div className="w-full">
             {label && (
@@ -14,7 +17,7 @@ const Input: React.FC<InputProps> = ({ label, error, className = "", ...props })
                 </label>
             )}
             <input className={`dark:bg-secondary-950/50 dark:text-secondary-50 w-full px-3 py-2 border border-secondary-300 dark:border-secondary-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${error ? "border-red-500" : ""} ${className}`}
-                {...props}
+                {...props} placeholder={t(props.placeholder)}
             />
             {error && (
                 <p className="mt-1 text-sm text-red-600">{error}</p>

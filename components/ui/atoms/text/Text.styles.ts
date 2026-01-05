@@ -1,12 +1,10 @@
-import { TextSize, TextVariant, TextWeight, TextStyleProps, TextAlign, TextTransform } from "./types";
+import { TextAlign, TextVariant, TextHeight, TextSize, TextStyleProps, TextTransform, TextWeight } from "./types";
 
-const baseStyles = "text-secondary-700 dark:text-secondary-300";
-
-const variants: Record<TextVariant, string> = {
+const heights: Record<TextHeight, string> = {
     body: "leading-normal",
-    caption: "leading-tight text-secondary-600",
+    caption: "leading-tight",
     label: "leading-snug font-medium",
-    helper: "leading-tight text-secondary-500",
+    helper: "leading-tight",
 };
 
 const sizes: Record<TextSize, string> = {
@@ -14,6 +12,7 @@ const sizes: Record<TextSize, string> = {
     sm: "text-sm",
     md: "text-base",
     lg: "text-lg",
+    xl: "text-xl",
 };
 
 const weights: Record<TextWeight, string> = {
@@ -37,7 +36,17 @@ const transforms: Record<TextTransform, string> = {
     "normal-case": "normal-case",
 };
 
-const getStyle = ({ variant = "body", size = "md", weight = "normal", align = "left", transform = "normal-case" }: TextStyleProps) =>
-    `${baseStyles} ${variants[variant]} ${sizes[size]} ${weights[weight]} ${aligns[align]} ${transforms[transform]}`;
+const variants: Record<TextVariant, string> = {
+    primary: "text-primary-700 dark:text-primary-300",
+    secondary: "text-secondary-700 dark:text-secondary-300",
+    success: "text-success-700 dark:text-success-300",
+    danger: "text-danger-700 dark:text-danger-300",
+    warning: "text-warning-700 dark:text-warning-300",
+    info: "text-info-700 dark:text-info-300",
+    default: "text-secondary-700 dark:text-secondary-300"
+};
+
+const getStyle = ({ height = "body", size = "md", weight = "normal", align = "left", transform = "normal-case", variant = "default" }: TextStyleProps) =>
+    `${variants[variant]} ${heights[height]} ${sizes[size]} ${weights[weight]} ${aligns[align]} ${transforms[transform]}`;
 
 export default getStyle;

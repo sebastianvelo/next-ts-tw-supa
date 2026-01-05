@@ -1,41 +1,46 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Tab from "./Tab";
 
-interface Tab {
+export interface TabItem {
     id: string;
     label: string;
     content: React.ReactNode;
 }
 
-interface TabsProps {
-    tabs: Tab[];
+export interface TabsProps {
+    tabs: TabItem[];
+    tabsClassName?: string;
+    contentClassName?: string;
     defaultTab?: string;
+    horizontal?: boolean;
 }
 
-const Tabs: React.FC<TabsProps> = ({ tabs, defaultTab }) => {
+const Tabs: React.FC<TabsProps> = ({ tabs, tabsClassName = "", contentClassName = "", defaultTab, horizontal = false }) => {
     const [activeTab, setActiveTab] = useState(defaultTab || tabs[0]?.id);
-
     const activeContent = tabs.find(tab => tab.id === activeTab)?.content;
+
+    useEffect(() => {
+        setActiveTab(defaultTab || tabs[0]?.id);
+    }, [tabs, defaultTab]);
 
     return (
         <div className="w-full">
             <div className="border-b border-secondary-200 dark:border-secondary-900">
-                <nav className="flex space-x-8">
+                <nav className={`flex space-x-4 ${tabsClassName}`}>
                     {tabs.map(tab => (
-                        <button
+                        <Tab
+                            id={tab.id}
                             key={tab.id}
+                            label={tab.label}
+                            active={tab.id === activeTab}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === tab.id
-                                ? "border-primary-500 text-primary-600"
-                                : "border-transparent text-secondary-500 hover:text-secondary-700 hover:border-secondary-300 dark:border-secondary-800"
-                                }`}
-                        >
-                            {tab.label}
-                        </button>
+                            horizontal={horizontal}
+                        />
                     ))}
                 </nav>
             </div>
-            <div className="mt-6">
+            <div className={`${contentClassName}`}>
                 {activeContent}
             </div>
         </div>

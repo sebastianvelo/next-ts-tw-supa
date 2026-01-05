@@ -1,0 +1,18 @@
+{
+    "user.layout.tabs.about": "About me",
+    "user.layout.tabs.institutions": "Institutions",
+    "user.layout.tabs.courses": "Courses",
+    "user.layout.tabs.submissions": "Submissions",
+    "user.layout.tabs.notes": "Notes",
+    "user.home.title": "Info del usuario",
+    "user.institutions.title": "User institutions",
+    "user.courses.title": "My courses",
+    "user.submissions.title": "User submissions",
+    "user.notes.title": "User notes",
+    "user.courses.tabs.teacher": "Teacher",
+    "user.courses.tabs.teacher-assistant": "Teacher assistant",
+    "user.courses.tabs.student": "Student",
+    "user.courses.teacher.title": "Courses as teacher",
+    "user.courses.teacher-assistant.title": "Courses as assistant",
+    "user.courses.student.title": "Courses as student"
+}

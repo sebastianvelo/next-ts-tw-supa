@@ -1,9 +1,9 @@
+import { Language, LanguageProps } from "@/locales/types";
 import { createContext } from "react";
-import { LanguageProps, Locale } from "./types/types";
 
 export interface LanguageContextType {
-  lang: Locale;
-  setLang: React.Dispatch<React.SetStateAction<Locale>>;
+  lang: Language;
+  setLang: React.Dispatch<React.SetStateAction<Language>>;
   LANGUAGES: LanguageProps[];
 }
 

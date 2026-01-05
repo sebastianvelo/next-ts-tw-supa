@@ -8,10 +8,10 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ children, className = "", onClick, hover = false }) => {
-    const hoverStyles = hover ? "transition-all duration-200 hover:shadow-lg hover:border-secondary-300 dark:border-secondary-800 cursor-pointer hover:bg-white/80 dark:hover:bg-black/80" : "";
+    const hoverStyles = hover ? "transition-all duration-300 hover:border-secondary-300 dark:border-secondary-800 cursor-pointer hover:bg-white dark:hover:bg-black" : "";
 
     return (
-        <div className={`backdrop-blur-xl bg-white/90 dark:bg-secondary-950/50 border border-black/20 dark:border-white/20 rounded-lg shadow-sm transition-all ${hoverStyles} ${className}`} onClick={onClick}>
+        <div className={`rounded-lg bg-white/70 dark:bg-secondary-950/60 border border-black/20 dark:border-white/10 transition-all ${hoverStyles} ${className}`} onClick={onClick}>
             {children}
         </div>
     );
@@ -21,7 +21,7 @@ export default Card;
 
 export const CardHeader: React.FC<ComponentProps<"div">> = ({ children, className = "" }) => {
     return (
-        <div className={`px-6 py-4 border-b border-secondary-200 dark:border-secondary-900 ${className}`}>
+        <div className={`p-4 border-b border-black/30 dark:border-white/20 ${className}`}>
             {children}
         </div>
     );
@@ -29,7 +29,7 @@ export const CardHeader: React.FC<ComponentProps<"div">> = ({ children, classNam
 
 export const CardBody: React.FC<ComponentProps<"div">> = ({ children, className = "" }) => {
     return (
-        <div className={`px-6 py-4 ${className}`}>
+        <div className={`p-4 ${className}`}>
             {children}
         </div>
     );
@@ -37,7 +37,7 @@ export const CardBody: React.FC<ComponentProps<"div">> = ({ children, className 
 
 export const CardFooter: React.FC<ComponentProps<"div">> = ({ children, className = "" }) => {
     return (
-        <div className={`px-6 py-4 border-t border-secondary-200 dark:border-secondary-900 bg-secondary-50 dark:bg-secondary-950 rounded-b-lg ${className}`}>
+        <div className={`px-6 py-4 border-t border-secondary-300 dark:border-secondary-800 bg-secondary-50 dark:bg-secondary-950 rounded-b-lg ${className}`}>
             {children}
         </div>
     );

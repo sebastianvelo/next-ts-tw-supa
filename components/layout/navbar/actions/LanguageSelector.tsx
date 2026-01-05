@@ -1,9 +1,9 @@
 "use client"
 import Select from "@/components/ui/molecules/select/Select";
-import { Locale } from "@/context/language/types/types";
 import useIsMobile from "@/hooks/app/useIsMobile";
-import useLanguage from "@/hooks/app/useLanguage";
+import useLanguage from "@/hooks/lang/useLanguage";
 import { SelectOption } from "@/hooks/components/useSelectInput";
+import { Language } from "@/locales/types";
 
 const LanguageSelector: React.FC = () => {
     const isMobile = useIsMobile();
@@ -15,10 +15,10 @@ const LanguageSelector: React.FC = () => {
     }));
 
     const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setLang(e.target.value as Locale);
+        setLang(e.target.value as Language);
     };
 
-    return <Select name="language" value={lang} onChange={handleLanguageChange} options={languageOptions} />;
+    return <Select name="language" label="Idioma" value={lang} onChange={handleLanguageChange} options={languageOptions} />;
 };
 
 export default LanguageSelector;
