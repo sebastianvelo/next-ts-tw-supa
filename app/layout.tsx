@@ -23,8 +23,8 @@ export const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Klass - Your modern classroom",
-  description: "Your modern classroom.",
+  title: "change this in layout.tsx",
+  description: "change this in layout.tsx",
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
