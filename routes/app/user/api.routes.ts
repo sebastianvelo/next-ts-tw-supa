@@ -9,10 +9,6 @@ const API_USERS = {
     ROOT: API_ROOT,
     BY_ID: BY_ID,
     HOME: (userId: string) => pathOf(BY_ID(userId), SEGMENTS.HOME),
-    INSTITUTIONS: (userId: string) => pathOf(BY_ID(userId), SEGMENTS.INSTITUTIONS),
-    COURSES: (userId: string) => pathOf(BY_ID(userId), SEGMENTS.COURSES),
-    NOTES: (userId: string) => pathOf(BY_ID(userId), SEGMENTS.NOTES),
-    SUBMISSIONS: (userId: string) => pathOf(BY_ID(userId), SEGMENTS.SUBMISSIONS),
 };
 
 export default API_USERS;

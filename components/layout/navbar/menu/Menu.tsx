@@ -5,18 +5,6 @@ const tabs = [
         label: "Inicio",
         href: "/user",
     },
-    {
-        label: "Instituciones",
-        href: "/institutions",
-    },
-    {
-        label: "Carreras",
-        href: "/programs",
-    },
-    {
-        label: "Cursos",
-        href: "/courses",
-    },
 ];
 
 interface MenuProps {

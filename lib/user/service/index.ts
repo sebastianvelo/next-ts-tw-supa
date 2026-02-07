@@ -3,8 +3,6 @@ import CreateDTO from "@/core/service/dto/create";
 import UpdateDTO from "@/core/service/dto/update";
 import WithTimestamps from "@/core/service/helpers/with-timestamps";
 import ERRORS from "@/errors";
-import CourseMembership from "@/lib/course-membership/model";
-import InstitutionMembership from "@/lib/institution-membership/model";
 import User from "@/lib/user/model";
 import UserRepository from "@/lib/user/repository";
 import UserDTO from "../view/dto/UserRegistrationData";
@@ -43,11 +41,6 @@ class UserService implements UserAPIService {
 
     async getByIds(ids: string[]): Promise<User[]> {
         return UserRepository.findByIds(ids);
-    }
-
-    async getByMemberships(roles: (CourseMembership | InstitutionMembership)[]): Promise<User[]> {
-        const ids = roles.map(r => r.userId);
-        return this.getByIds(ids);
     }
 
     async getByEmail(email: string): Promise<User | null> {
