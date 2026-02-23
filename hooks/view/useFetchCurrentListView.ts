@@ -1,21 +1,20 @@
 import { ResponseFetchError } from "@/core/errors";
 import PaginatorDTO from "@/core/view/DTO/common/paginator";
-import FilterBadgeDTO from "@/core/view/DTO/filter/filter-badge";
-import { CardListSectionDTO } from "@/core/view/DTO/list-section/card-list-section";
+import FiltersSectionDTO from "@/core/view/DTO/filter/filters-section";
 import ListViewDTO from "@/core/view/DTO/list-view/list-view";
 import { useEffect, useState } from "react";
 import useFetchCurrentView from "./useFetchCurrentView";
 
-type UseFetchCurrentListView = {
+type UseFetchCurrentListView<T extends ListViewDTO<T["list"]>> = {
     isLoading: boolean;
     error?: ResponseFetchError;
-    data?: ListViewDTO;
+    data?: ListViewDTO<T["list"]>;
 }
 
-const useFetchCurrentListView = (): UseFetchCurrentListView => {
-    const { props, isLoading, error } = useFetchCurrentView<ListViewDTO>();
-    const [filters, setFilters] = useState<FilterBadgeDTO[] | undefined>(props?.filters);
-    const [list, setList] = useState<CardListSectionDTO | undefined>(props?.list);
+const useFetchCurrentListView = <T extends ListViewDTO<T["list"]>>(id?: string): UseFetchCurrentListView<T> => {
+    const { props, isLoading, error } = useFetchCurrentView<T>({ id });
+    const [filters, setFilters] = useState<FiltersSectionDTO[] | undefined>(props?.filters);
+    const [list, setList] = useState<T["list"] | undefined>(props?.list);
     const [paginator, setPaginator] = useState<PaginatorDTO | undefined>(props?.paginator);
 
     useEffect(() => {

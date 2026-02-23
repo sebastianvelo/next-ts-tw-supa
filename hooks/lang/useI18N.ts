@@ -3,7 +3,7 @@ import wordings, { TranslationKey } from "@/locales/wordings";
 import useLanguage from "./useLanguage";
 
 type UseI18N = {
-    t: (key?: string) => string;
+    t: (key?: string | null) => string;
     p: (key: string, data: Array<string | number>) => string;
     tlist: (key: string) => string[];
 };
@@ -11,7 +11,7 @@ type UseI18N = {
 const useI18N = (): UseI18N => {
     const { lang } = useLanguage();
 
-    const t = (key?: string): string => wordings[lang][key as TranslationKey] as string ?? key;
+    const t = (key?: string | null): string => wordings[lang][key as TranslationKey] ?? key;
     const tlist = (key: string): string[] => wordings[lang][key as TranslationKey] as unknown as string[] ?? [];
     const p = (key: string, data: Array<string | number>) => replacePlaceholders(t(key), data);
 

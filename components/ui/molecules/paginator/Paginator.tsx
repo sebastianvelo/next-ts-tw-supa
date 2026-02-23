@@ -17,10 +17,10 @@ const Paginator: React.FC<PaginatorProps> = ({ total, page, maxPages }) => {
     const setPage = (value?: string | null) => {
         const params = new URLSearchParams(searchParams);
 
-        if (!value) {
-            params.delete(QueryParam.PAGE);
-        } else {
+        if (value) {
             params.set(QueryParam.PAGE, value);
+        } else {
+            params.delete(QueryParam.PAGE);
         }
 
         router.push(`${pathname}?${params.toString()}`);

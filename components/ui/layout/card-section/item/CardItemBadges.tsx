@@ -1,11 +1,14 @@
 import Badge from "@/components/ui/atoms/badge/Badge";
-import { CardItemDTO } from "@/core/view/DTO/list-section/card-list-section";
+import BadgeDTO from "@/core/view/DTO/common/badge";
 
-export interface CardItemBadgesProps extends Pick<CardItemDTO, "badges"> { }
+export interface CardItemBadgesProps {
+    badges?: BadgeDTO[];
+    className?: string;
+}
 
-const CardItemBadges: React.FC<CardItemBadgesProps> = ({ badges }) => {
+const CardItemBadges: React.FC<CardItemBadgesProps> = ({ badges, className }) => {
     return badges && badges.length > 0 && (
-        <div className="flex flex-wrap gap-2 pt-1">
+        <div className={`flex flex-wrap gap-2 ${className || "pt-1"}`}>
             {badges.map((badge, index) => (
                 <Badge
                     key={index}

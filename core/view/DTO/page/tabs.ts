@@ -5,8 +5,8 @@ export type PageTabDTO<ActionContext = any> = {
     permissionRequired?: ActionContext;
 };
 
-interface PageTabsDTO<ActionContext = any> {
-    tabs: PageTabDTO<ActionContext>[];
+interface PageNavigatorDTO<ActionContext = any> {
+    tabs?: PageTabDTO<ActionContext>[];
 }
 
-export default PageTabsDTO;
+export default PageNavigatorDTO;

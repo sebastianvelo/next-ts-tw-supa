@@ -1,9 +1,8 @@
 import PageHeaderDTO from "./header";
-import PageTabsDTO from "./tabs";
+import PageNavigatorDTO from "./tabs";
 
-interface LayoutViewDTO<ActionContext = any> {
+interface LayoutViewDTO<ActionContext = any> extends PageNavigatorDTO<ActionContext> {
   header: PageHeaderDTO;
-  tabs?: PageTabsDTO<ActionContext>;
 }
 
 export default LayoutViewDTO;

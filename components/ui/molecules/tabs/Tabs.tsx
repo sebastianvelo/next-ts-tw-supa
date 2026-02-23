@@ -16,18 +16,26 @@ export interface TabsProps {
     horizontal?: boolean;
 }
 
-const Tabs: React.FC<TabsProps> = ({ tabs, tabsClassName = "", contentClassName = "", defaultTab, horizontal = false }) => {
+const Tabs: React.FC<TabsProps> = ({ tabs, tabsClassName = "", contentClassName = "", defaultTab, horizontal = true }) => {
     const [activeTab, setActiveTab] = useState(defaultTab || tabs[0]?.id);
     const activeContent = tabs.find(tab => tab.id === activeTab)?.content;
 
+    const containerClassName = !horizontal && "flex gap-6";
+    const tabsBorderClassName = horizontal ? "border-b border-secondary-200 dark:border-secondary-800" : "border-r border-secondary-200 dark:border-secondary-800 min-w-[200px]";
+    const tabsNavClassName = horizontal ? `flex space-x-2 ${tabsClassName}` : `flex flex-col space-y-1 ${tabsClassName}`;
+
     useEffect(() => {
-        setActiveTab(defaultTab || tabs[0]?.id);
+        setActiveTab((prevActiveTab) => {
+            const isTabStillValid = tabs.some(tab => tab.id === prevActiveTab);
+            if (isTabStillValid) return prevActiveTab;
+            return defaultTab || tabs[0]?.id;
+        });
     }, [tabs, defaultTab]);
 
     return (
-        <div className="w-full">
-            <div className="border-b border-secondary-200 dark:border-secondary-900">
-                <nav className={`flex space-x-4 ${tabsClassName}`}>
+        <div className={`w-full ${containerClassName}`}>
+            <div className={tabsBorderClassName}>
+                <nav className={tabsNavClassName}>
                     {tabs.map(tab => (
                         <Tab
                             id={tab.id}
@@ -40,7 +48,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, tabsClassName = "", contentClassName 
                     ))}
                 </nav>
             </div>
-            <div className={`${contentClassName}`}>
+            <div className={`${!horizontal && "flex-1"} ${contentClassName}`}>
                 {activeContent}
             </div>
         </div>

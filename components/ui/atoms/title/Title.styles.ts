@@ -1,6 +1,6 @@
-import { TitleSize, TitleStyleProps, TitleVariant } from "./types";
+import { TitleAlign, TitleSize, TitleStyleProps, TitleVariant } from "./types";
 
-const baseStyles = "font-bold leading-tight font-roboto";
+const baseStyles = "font-bold leading-tight";
 
 const sizes: Record<TitleSize, string> = {
     xs: "text-base xl:text-lg",
@@ -22,7 +22,13 @@ const variants: Record<TitleVariant, string> = {
     default: "text-secondary-900 dark:text-secondary-100"
 };
 
-const getStyle = ({ size = "md", variant = "default" }: TitleStyleProps) =>
-    `${baseStyles} ${variants[variant]} ${sizes[size]}`;
+const aligns: Record<TitleAlign, string> = {
+    left: "text-left",
+    center: "text-center",
+    right: "text-right"
+};
+
+const getStyle = ({ size = "md", variant = "default", align = "left" }: TitleStyleProps) =>
+    `${baseStyles} ${variants[variant]} ${sizes[size]} ${aligns[align]}`;
 
 export default getStyle;

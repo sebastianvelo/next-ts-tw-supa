@@ -4,7 +4,7 @@ export type AppTheme = "blue" | "green" | "red" | "purple";
 
 export interface ThemeContextType {
   theme: AppTheme;
-  setTheme: (theme: AppTheme) => void;
+  applyTheme: (theme: AppTheme) => void;
   themes: readonly any[];
 }
 

@@ -14,7 +14,7 @@ interface ToastProps {
 const Toast: React.FC<ToastProps> = ({ close, variant = "success", message, i18n }) => {
     const { t } = useI18N();
     const toastStyle = variants[variant] || variants.success;
-    const toastClassName = (variant: ToastVariant) => `animate-slide-in-bottom xl:animate-slide-in-left fixed bottom-16 left-0 xl:left-1/4 ${variants[variant].bgColor} ${variants[variant].textColor} border ${variants[variant].borderColor} rounded-lg shadow-lg flex items-center justify-between px-4 py-3 w-full xl:max-w-2xl mx-auto transform transition-all duration-300 ease-in-out pointer-events-auto`;
+    const toastClassName = (variant: ToastVariant) => `animate-slide-in-bottom fixed bottom-16 left-0 xl:left-1/4 ${variants[variant].bgColor} ${variants[variant].textColor} border ${variants[variant].borderColor} rounded-lg shadow-lg flex items-center justify-between px-4 py-3 w-full xl:max-w-2xl mx-auto transform transition-all duration-300 ease-in-out pointer-events-auto`;
 
     return (
         <div className={toastClassName(variant)}>

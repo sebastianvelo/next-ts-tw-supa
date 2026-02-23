@@ -1,5 +1,7 @@
 {
     "navbar.sign-in.button": "Sign in",
     "navbar.sign-out.button": "Sign out",
-    "loading.label": "Loading..."
+    "loading.label": "Loading...",
+    "navbar.theme.title": "Theme",
+    "navbar.language.title": "Language"
 }

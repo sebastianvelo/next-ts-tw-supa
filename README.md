@@ -1,5 +1,3 @@
-# template
-
 This is a **Next.js 16** project using **TypeScript**, **Tailwind CSS**, and **Supabase**.
 
 ## Project Structure
@@ -8,37 +6,25 @@ The project follows a domain-driven structure where core logic is separated from
 
 ### Root Directories
 
-- **`app/`**: Main application routes using Next.js App Router.
-  - `api/`: Backend API route handlers (e.g., REST endpoints).
-  - `[feature]/`: Frontend pages organized by feature (e.g., `login/`, `user/`).
-- **`components/`**: Reusable UI building blocks.
-  - `layout/`: Structural components (e.g., `Header`, `Sidebar`, `Shell`).
-  - `ui/`: Primitive design system components (e.g., `Button`, `Input`, `Card`).
-  - `view/`: Feature-specific visual compositions (e.g., `UserList`, `CourseDetail`).
-- **`context/`**: Global state management providers.
-  - `[feature]/`: React Contexts for global concerns (e.g., `auth`, `theme`, `toast`).
-- **`core/`**: Base architecture and infrastructure.
-  - `api/`: HTTP client wrappers and fetch utilities.
-  - `db/`: Database clients and configuration (Supabase).
-  - `errors/`: Core error types and exception handling classes.
-  - `model/`, `service/`: Base abstract classes defining the architectural layers.
-- **`errors/`**: Application-level error definitions.
-  - `app/`: Domain-specific error dictionaries (e.g., `auth.errors.ts`).
-  - `codes.ts`: Centralized enum of all application error codes.
-- **`hooks/`**: Custom React hooks.
-  - `api/`: Data fetching hooks and SWR wrappers.
-  - `form/`: Form logic and validation hooks.
-- **`lib/`**: Domain-specific business logic modules.
-  - `[domain]/`: Self-contained feature modules (e.g., `user`, `course`) containing their own `Model`, `Repository`, and `Service` implementations.
-- **`locales/`**: Internationalization assets.
-  - `es/`, `en/`: JSON files containing translation strings.
-- **`public/`**: Static assets.
-  - `images/`: Publicly accessible images and icons.
-- **`routes/`**: Centralized routing configuration.
-  - `api/`: proper API route definitions.
-  - `app/`: Client-side route constants and navigation helpers.
-- **`supabase/`**: Database management.
-  - `migrations/`: SQL files for database schema changes and versioning.
+- **`app/`**: Next.js App Router directory. Contains the file-system based routing for both the frontend pages and API endpoints (`app/api`).
+- **`components/`**: React components.
+  - `layout/`: Structural components like headers, sidebars, and wrappers.
+  - `ui/`: Reusable, generic UI components (buttons, inputs, cards, etc.).
+  - `view/`: Complex, page-specific components that assemble smaller UI components.
+- **`core/`**: Base architecture and shared utilities.
+  - `api/`: API client configurations and helpers.
+  - `db/`: Database connection and configuration (Supabase).
+  - `model/`, `repository/`, `service/`: Base classes and interfaces for the application's layered architecture.
+  - `errors/`: Custom error classes and handling logic.
+- **`lib/`**: Domain-specific business logic, organized by feature (e.g., `course`, `user`, `lesson`).
+  - Each folder typically contains the specific models, repositories, services, and types for that domain entity.
+- **`routes/`**: Routing configuration, including route maps, permission guards, and navigation utilities.
+- **`hooks/`**: Custom React hooks for shared logic.
+- **`context/`**: React Context providers for global state management.
+- **`mock/`**: Scripts and utilities for generating mock data (using `@faker-js/faker`).
+- **`locales/`**: Internationalization (i18n) files.
+- **`public/`**: Static assets like images and icons.
+- **`supabase/`**: Supabase specific configurations and migrations.
 
 ## Key Technologies
 

@@ -14,14 +14,15 @@ export interface TabProps {
 const Tab: React.FC<TabProps> = ({ id, label, active, onClick, href, horizontal = false }) => {
     const { t } = useI18N();
     const className = getTabStyle(horizontal, active);
+    const translatedLabel = t(label);
 
     return href ? (
-        <Link className={className} href={href}>
-            {t(label)}
+        <Link className={`${className} block`} href={href} title={translatedLabel}>
+            <span className="block truncate group-hover:whitespace-normal">{translatedLabel}</span>
         </Link>
     ) : (
-        <button onClick={() => onClick?.(id)} className={className}>
-            {t(label)}
+        <button onClick={() => onClick?.(id)} className={`${className} block`} title={translatedLabel}>
+            <span className="block truncate group-hover:whitespace-normal">{translatedLabel}</span>
         </button>
     );
 };

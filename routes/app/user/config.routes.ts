@@ -1,4 +1,3 @@
-import QueryParam from "@/routes/types/params.routes";
 import { RouteConfigMap } from "@/routes/types/types";
 import CLIENT_LOGIN from "../login/client.routes";
 import API_USERS from "./api.routes";

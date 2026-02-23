@@ -19,9 +19,9 @@ const Brand: React.FC<BrandProps> = ({ size = "xl" }) => {
     return (
         <div className="flex flex-col group">
             <Link href={ROUTES.USER.ROOT} className="flex items-center">
-                <span className={`${commonStyles} duration-200 -rotate-6 group-hover:-rotate-0 text-primary-400 group-hover:text-primary-500 dark:text-primary-400 dark:group-hover:text-primary-300`}>Br</span>
-                <span className={`${commonStyles} duration-700 rotate-6 group-hover:rotate-0 text-primary-500 group-hover:text-primary-600 dark:text-primary-500 dark:group-hover:text-primary-400`}>and</span>
-                <span className={`${commonStyles} duration-500 rotate-6 group-hover:-rotate-12 text-primary-600 group-hover:text-primary-700 dark:text-primary-600 dark:group-hover:text-primary-500`}>.tsx</span>
+                <span className={`${commonStyles} duration-200 -rotate-6 group-hover:-rotate-0 text-primary-400 group-hover:text-primary-500 dark:text-primary-400 dark:group-hover:text-primary-300`}>
+                    Demo
+                </span>
             </Link>
             <div className="px-4 rotate-0 group-hover:-rotate-2">
                 <div className="w-0 group-hover:w-full bg-gradient-to-r from-primary-500 to-primary-700 dark:from-primary-200 dark:to-primary-400 h-px transition-all duration-700 rounded-full"></div>

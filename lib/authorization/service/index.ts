@@ -18,6 +18,23 @@ class AuthorizationService {
         return user;
     }
 
+    async getCurrentUser(): Promise<User | null> {
+        const { user: authUser } = await AuthService.getAuthUser();
+
+        if (!authUser) {
+            return null;
+        }
+
+        try {
+            return await UserService.getByAuthIdOrThrow(authUser.id);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    getPermissionRequired<P>(route: PathBuilder | string): P | undefined {
+        return ROUTE_CONFIG_MAP[typeof route === "string" ? route : route(ID)]?.requiredPermission as P;
+    }
 }
 
 export default new AuthorizationService();

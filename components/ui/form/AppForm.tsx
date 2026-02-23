@@ -1,6 +1,10 @@
-import { CardBody } from "@/components/ui/molecules/card/Card";
+import { LastStepContent } from "@/components/ui/form/types";
+import CardBody from "../molecules/card/CardBody";
+import CardHeader from "../molecules/card/CardHeader";
 import FormFieldDTO from "@/core/view/DTO/form/form-field";
-import useAppForm from "@/hooks/form/useAppForm";
+import useAppForm from "@/components/ui/form/hooks/useAppForm";
+import { FormProvider } from "react-hook-form";
+import Title from "../atoms/title/Title";
 import AppFormActions from "./actions/AppFormActions";
 import FormFieldContainer from "./field/FormFieldContainer";
 
@@ -10,34 +14,61 @@ interface AppFormProps<T extends Record<string, any>> {
     onSubmit?: (data: T) => Promise<void>;
     onSuccess?: (response: any) => void;
     onError?: (error: Error) => void;
-    submitButtonText?: string;
-    submitButtonLoadingText?: string;
-    clearButtonText?: string;
+    isWizard?: boolean;
+    onLastStep?: () => void;
+    showSubmitButton?: boolean;
+    lastStepContent?: LastStepContent<T>;
 }
 
-const AppForm = <T extends Record<string, any>>({ fields, apiRoute, onSubmit, onSuccess, onError, ...props }: AppFormProps<T>) => {
-    const { register, handleSubmit, errors, isSubmitting, reset, formFields } = useAppForm<T>({
+const AppForm = <T extends Record<string, any>>({ fields, apiRoute, onSubmit, onSuccess, onError, isWizard, onLastStep, showSubmitButton = true, lastStepContent, ...props }: AppFormProps<T>) => {
+    const { methods, handleSubmit, isSubmitting, reset, wizard } = useAppForm<T>({
         formFields: fields,
         onSubmit,
         onError,
         onSuccess,
-        apiRoute
+        apiRoute,
+        isWizard,
+        onLastStep,
+        hasExtraStep: !!lastStepContent
     });
 
+    const renderLastStepContent = () => {
+        if (typeof lastStepContent === "function") {
+            return lastStepContent({ watch: methods.watch, submit: handleSubmit, fields });
+        }
+        return lastStepContent;
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <CardBody className="space-y-4">
-                {formFields.map((field) => (
-                    <FormFieldContainer<T>
-                        key={field.name as string}
-                        {...field}
-                        register={register}
-                        errors={errors}
-                    />
-                ))}
-            </CardBody>
-            <AppFormActions {...props} errors={errors} isSubmitting={isSubmitting} reset={reset} />
-        </form>
+        <FormProvider {...methods}>
+            <form onSubmit={handleSubmit}>
+                {isWizard && (
+                    <CardHeader>
+                        <Title t={`${wizard.currentStep + 1} / ${wizard.length}`} size="md" align="right" />
+                    </CardHeader>
+                )}
+                <CardBody className="space-y-4">
+                    {wizard.visibleFields.map((field) => (
+                        <FormFieldContainer<T>
+                            key={field.name as string}
+                            {...field}
+                        />
+                    ))}
+                    {wizard.isLastStep && lastStepContent && renderLastStepContent()}
+                </CardBody>
+                <AppFormActions
+                    {...props}
+                    showSubmitButton={showSubmitButton}
+                    isSubmitting={isSubmitting}
+                    reset={reset}
+                    isWizard={isWizard}
+                    onNext={wizard.handleNext}
+                    onPrev={wizard.handlePrev}
+                    isFirstStep={wizard.isFirstStep}
+                    isLastStep={wizard.isLastStep}
+                />
+            </form>
+        </FormProvider>
     );
 };
 

@@ -1,5 +1,7 @@
 {
     "navbar.sign-in.button": "Iniciar sesión",
     "navbar.sign-out.button": "Cerrar sesión",
-    "loading.label": "Cargando..."
+    "loading.label": "Cargando...",
+    "navbar.theme.title": "Tema",
+    "navbar.language.title": "Idioma"
 }

@@ -1,13 +1,9 @@
-import PaginatorParams from "@/core/types/PaginatorParams";
-
-export type PaginatedResult<T> = {
-    items: T[];
-    total: number;
-};
+import QueryParams from "@/core/types/QueryParams";
+import PaginatedResult from "@/core/types/PaginatedResult";
 
 type PaginationService<DynamicKeys, FullModel> = {
     [K in keyof Omit<DynamicKeys, "id"> & string as `getBy${Capitalize<K>}Paginated`]?:
-    (value: DynamicKeys[K], params?: PaginatorParams) => Promise<PaginatedResult<FullModel>>;
+    (value: DynamicKeys[K], query?: QueryParams<FullModel>) => Promise<PaginatedResult<FullModel>>;
 };
 
 export default PaginationService;

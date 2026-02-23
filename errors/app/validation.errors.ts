@@ -23,13 +23,6 @@ const VALIDATION = {
             409,
             { field, value }
         ),
-    EMAIL_IN_USE: (courseId: string) =>
-        new APIServiceError(
-            ErrorCode.EMAIL_IN_USE,
-            "Email is already in use",
-            403,
-            { courseId }
-        ),
 };
 
 export default VALIDATION;

@@ -33,7 +33,7 @@ export function selectUsersWithoutOverlap<T extends string>(availableUsers: User
 
     for (const { quantity, role } of selections) {
         const selected = faker.helpers.arrayElements(remaining, Math.min(quantity, remaining.length));
-        results.push({ users: selected, role: role as T });
+        results.push({ users: selected, role });
         remaining = remaining.filter(user => !selected.includes(user));
     }
 
@@ -44,8 +44,7 @@ export const capitalizeFirstLetter = (text: string) => `${text[0].toUpperCase()}
 
 export const capitalizeAllWords = (text: string) => text.split(" ").map(capitalizeFirstLetter).join(" ");
 
-export const generate = <T>(size: number, entityBuilder: (parentId: string) => T) => {
-    return {
-        forEach: <P extends Model>(parents: P[]) => parents.flatMap(p => Array.from({ length: size }, () => entityBuilder(p.id)))
-    };
-};
+export const generate = <T>(size: number, entityBuilder: (parentId: string) => T) => ({
+    forEach: <P extends Model>(parents: P[]): T[] =>
+        parents.flatMap(p => Array.from({ length: size }, () => entityBuilder(p.id)))
+});

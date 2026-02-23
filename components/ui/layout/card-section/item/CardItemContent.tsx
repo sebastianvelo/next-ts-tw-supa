@@ -1,5 +1,5 @@
 import Text from "@/components/ui/atoms/text/Text";
-import { CardBody } from "@/components/ui/molecules/card/Card";
+import CardBody from "@/components/ui/molecules/card/CardBody";
 import { CardItemDTO } from "@/core/view/DTO/list-section/card-list-section";
 
 export interface CardItemContentProps extends Pick<CardItemDTO, "content"> { }

@@ -1,7 +1,7 @@
 interface ListSectionDTO<T> {
     title?: string;
     subtitle?: string;
-    items?: T[] | undefined;
+    items: T[] | undefined;
     grid?: string;
 }
 

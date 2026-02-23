@@ -1,4 +1,5 @@
 import { FormFieldType, Validation } from "@/core/forms/types";
+import QuestionDTO from "./question";
 
 interface FormFieldDTO<T> {
     name: keyof T;
@@ -9,6 +10,8 @@ interface FormFieldDTO<T> {
     rows?: number;
     options?: Array<{ value: string | number; label: string; }>;
     checkboxLabel?: string;
+    addButtonLabel?: string;
+    question?: QuestionDTO<any>;
     validation?: {
         required?: string;
         pattern?: Validation<RegExp>;
@@ -17,6 +20,11 @@ interface FormFieldDTO<T> {
         min?: Validation;
         max?: Validation;
         validate?: Record<string, (value: any) => boolean | string>;
+    };
+    fields?: FormFieldDTO<any>[];
+    dependency?: {
+        field: keyof T;
+        value: any;
     };
 }
 

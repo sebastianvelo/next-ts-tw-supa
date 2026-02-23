@@ -6,7 +6,7 @@ import UserSection from "./user-section/UserSection";
 
 const Navbar: React.FC = () => {
     return (
-        <nav className="bg-gradient-to-l from-secondary-100 via-white to-secondary-100 dark:from-black dark:via-secondary-900 dark:to-black border-b border-black/20 dark:border-white/10">
+        <nav className="bg-gradient-to-l from-secondary-100 via-white to-secondary-100 dark:from-secondary-950 dark:via-secondary-900 dark:to-secondary-950 border-b border-black/20 dark:border-white/10">
             <div className="px-4 sm:px-6 lg:px-8 py-2">
                 <div className="flex justify-between items-center py-1">
                     <Brand />

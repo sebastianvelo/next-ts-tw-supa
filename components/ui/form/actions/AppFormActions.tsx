@@ -1,29 +1,34 @@
-import Button from "@/components/ui/atoms/button/Button";
-import { CardFooter } from "@/components/ui/molecules/card/Card";
-import { FieldErrors, UseFormReset } from "react-hook-form";
+import { UseFormReset } from "react-hook-form";
+import AppFormDefaultActions from "./AppFormDefaultActions";
+import AppFormWizardActions from "./AppFormWizardActions";
 
 interface AppFormActionsProps<T extends Record<string, any>> {
-    errors: FieldErrors<T>;
-    submitButtonText?: string;
-    submitButtonLoadingText?: string;
-    clearButtonText?: string;
     isSubmitting: boolean;
     reset: UseFormReset<T>;
+    isWizard?: boolean;
+    onNext?: () => void;
+    onPrev?: () => void;
+    isLastStep?: boolean;
+    isFirstStep?: boolean;
+    showSubmitButton?: boolean;
 }
 
-const AppFormActions = <T extends Record<string, any>>({ errors, submitButtonText = "Crear", submitButtonLoadingText = "Creando...", clearButtonText = "Limpiar", isSubmitting, reset }: AppFormActionsProps<T>) => {
+const AppFormActions = <T extends Record<string, any>>({ isSubmitting, reset, isWizard, onNext, onPrev, isFirstStep, isLastStep, showSubmitButton }: AppFormActionsProps<T>) => {
+    if (isWizard) {
+        return (
+            <AppFormWizardActions
+                onNext={onNext}
+                onPrev={onPrev}
+                isFirstStep={isFirstStep}
+                isLastStep={isLastStep}
+                isSubmitting={isSubmitting}
+                showSubmitButton={showSubmitButton}
+            />
+        );
+    }
 
     return (
-        <CardFooter>
-            <div className="flex gap-2 justify-end w-full">
-                <Button type="button" variant="secondary" onClick={() => reset()} disabled={isSubmitting}>
-                    {clearButtonText}
-                </Button>
-                <Button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? submitButtonLoadingText : submitButtonText}
-                </Button>
-            </div>
-        </CardFooter>
+        <AppFormDefaultActions reset={reset} isSubmitting={isSubmitting} />
     );
 };
 

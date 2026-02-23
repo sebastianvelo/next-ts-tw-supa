@@ -1,6 +1,6 @@
 import PageHeader from "@/components/layout/main/header/PageHeader";
 import LayoutViewDTO from "@/core/view/DTO/page/layout";
-import PageNavigator from "./PageNavigator";
+import PageNavigator from "./navigator/PageNavigator";
 
 interface PageLayoutViewProps extends LayoutViewDTO<any>, React.PropsWithChildren { }
 

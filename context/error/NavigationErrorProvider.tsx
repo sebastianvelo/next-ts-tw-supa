@@ -1,15 +1,14 @@
 "use client";
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useMemo, useState } from "react";
 import NavigationErrorContext from "./NavigationErrorContext";
 
 const NavigationErrorProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [redirectError, setRedirectError] = useState<string | undefined>();
-
   const clearRedirectError = () => setRedirectError(undefined);
-  //TODO Hacer un parser de APIServiceError a APIClientError para visualizarlo.
-  
+  const error = useMemo(() => ({ redirectError, setRedirectError, clearRedirectError }), [redirectError]);
+
   return (
-    <NavigationErrorContext.Provider value={{ redirectError, setRedirectError, clearRedirectError }}>
+    <NavigationErrorContext.Provider value={error}>
       {children}
     </NavigationErrorContext.Provider>
   );

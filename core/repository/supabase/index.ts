@@ -1,6 +1,8 @@
 import { createClient } from "@/core/db/supabase/SupabaseServer";
 import Model from "@/core/model/Model";
 import BaseRepository from "@/core/repository";
+import PaginatedResult from "@/core/types/PaginatedResult";
+import QueryParams from "@/core/types/QueryParams";
 import { Without } from "@/core/types/Without";
 
 abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
@@ -32,6 +34,71 @@ abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
             .in("id", ids);
         if (error || !data) return [];
         return data;
+    }
+
+    async findAndCountByIds(ids: string[], query?: QueryParams<T>): Promise<PaginatedResult<T>> {
+        const supabase = await createClient();
+
+        let q = supabase
+            .from(this.TABLE)
+            .select("*", { count: "exact" });
+
+        q = q.in("id", ids);
+
+        if (query?.paginator) {
+            const start = query.paginator.offset ?? 0;
+            q = q.range(start, start + (query.paginator.limit ?? 0));
+        }
+
+        const { data, count, error } = await q;
+        if (error) throw error;
+        return { items: data || [], total: count ?? 0 };
+    }
+
+    protected async findByFields(query?: QueryParams<T>): Promise<T[]> {
+        const supabase = await createClient();
+
+        let q = supabase.from(this.TABLE).select("*");
+
+        const filters = query?.filter ?? {};
+        for (const [key, value] of Object.entries(filters)) {
+            q = q.eq(key, value);
+        }
+
+        if (query?.sorter) q = q.order(query.sorter.column as string, { ascending: query.sorter.ascending ?? true });
+
+        if (query?.paginator) {
+            const start = query.paginator.offset ?? 0;
+            q = q.range(start, start + (query.paginator.limit ?? 0));
+        }
+
+        const { data, error } = await q;
+        if (error) throw error;
+        return data || [];
+    }
+
+    protected async findAndCount(query?: QueryParams<T>): Promise<PaginatedResult<T>> {
+        const supabase = await createClient();
+
+        let q = supabase
+            .from(this.TABLE)
+            .select("*", { count: "exact" }); // supabase devuelve el count en el header
+
+        const filters = query?.filter ?? {};
+        for (const [key, value] of Object.entries(filters)) {
+            q = q.eq(key, value);
+        }
+
+        if (query?.sorter) q = q.order(query.sorter.column as string, { ascending: query.sorter.ascending ?? true });
+
+        if (query?.paginator) {
+            const start = query.paginator.offset ?? 0;
+            q = q.range(start, start + (query.paginator.limit ?? 0));
+        }
+
+        const { data, count, error } = await q;
+        if (error) throw error;
+        return { items: data || [], total: count ?? 0 };
     }
 
     async create(data: Without<T, Model>): Promise<T> {

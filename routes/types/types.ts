@@ -2,13 +2,13 @@ import QueryParam from "./params.routes";
 
 export type PathBuilder = (id: string) => string;
 
-export type RouteConfig = {
+export type RouteConfig<P> = {
     apiRoute: PathBuilder;
     fallbackPath?: PathBuilder;
-    requiredPermission?: any;
+    requiredPermission?: P;
     allowedParams?: QueryParam[];
 };
 
-export type RouteConfigMap = {
-    [pattern: string]: RouteConfig;
+export type RouteConfigMap<P> = {
+    [pattern: string]: RouteConfig<P>;
 };

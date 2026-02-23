@@ -1,6 +1,9 @@
 import Text from "@/components/ui/atoms/text/Text";
 import Title from "@/components/ui/atoms/title/Title";
-import Card, { CardBody, CardFooter, CardHeader } from "@/components/ui/molecules/card/Card";
+import Card from "@/components/ui/molecules/card/Card";
+import CardBody from "@/components/ui/molecules/card/CardBody";
+import CardFooter from "@/components/ui/molecules/card/CardFooter";
+import CardHeader from "@/components/ui/molecules/card/CardHeader";
 import ROUTES from "@/routes/client/routes";
 import { FileQuestion } from "lucide-react";
 import Link from "next/link";

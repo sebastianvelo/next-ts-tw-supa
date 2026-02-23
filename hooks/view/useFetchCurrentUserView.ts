@@ -4,15 +4,10 @@ import useFetchCurrentView from "./useFetchCurrentView";
 
 const useFetchCurrentUserView = <T>(): FetchResponse<T> => {
     const { user } = useAuth();
-    const { props, isLoading, error } = useFetchCurrentView<T>(({
-        id: user?.id
-    }));
 
-    return {
-        props,
-        isLoading,
-        error,
-    };
+    return useFetchCurrentView<T>({
+        id: user?.id
+    });
 };
 
 export default useFetchCurrentUserView;

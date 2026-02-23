@@ -11,6 +11,9 @@ export enum FormFieldType {
     RADIO = "radio",
     SELECT = "select",
     DATE = "date",
-    FILE = "file"
+    FILE = "file",
+    OBJECT_LIST = "object_list",
+    QUESTION = "question"
 }
+
 

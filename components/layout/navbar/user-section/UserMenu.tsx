@@ -2,7 +2,10 @@ import LanguageSelector from "@/components/layout/navbar/actions/LanguageSelecto
 import UserAvatar from "@/components/ui/app/UserAvatar";
 import Button from "@/components/ui/atoms/button/Button";
 import Text from "@/components/ui/atoms/text/Text";
-import Card, { CardBody, CardFooter, CardHeader } from "@/components/ui/molecules/card/Card";
+import Card from "@/components/ui/molecules/card/Card";
+import CardFooter from "@/components/ui/molecules/card/CardFooter";
+import CardBody from "@/components/ui/molecules/card/CardBody";
+import CardHeader from "@/components/ui/molecules/card/CardHeader";
 import Dropdown from "@/components/ui/molecules/dropdown/Dropdown";
 import User from "@/lib/user/model";
 import I18n from "@/locales/I18nKeys";

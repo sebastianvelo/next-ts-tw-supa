@@ -14,7 +14,7 @@ const Badge: React.FC<BadgeProps> = ({ label, variant, size, rounded, transform,
     const { t } = useI18N();
 
     return (
-        <span className={`${getStyle({ variant, size, rounded, transform })} ${className}`} {...props}>
+        <span {...props} className={`${getStyle({ variant, size, rounded, transform })} ${className}`}>
             {icon && <span className="flex-shrink-0">{icon}</span>}
             <span>{t(label)}</span>
             {onRemove && (

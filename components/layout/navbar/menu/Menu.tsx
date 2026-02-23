@@ -1,4 +1,4 @@
-import PageTabs from "@/components/layout/main/PageTabs";
+import PageTabs from "@/components/layout/main/navigator/PageTabs";
 
 const tabs = [
     {
@@ -11,10 +11,8 @@ interface MenuProps {
 
 }
 
-const Menu: React.FC<MenuProps> = () => {
-    return (
-        <PageTabs horizontal tabs={tabs} />
-    );
-}
+const Menu: React.FC<MenuProps> = () => (
+    <PageTabs horizontal tabs={tabs} />
+);
 
 export default Menu;
