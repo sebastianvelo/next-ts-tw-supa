@@ -42,7 +42,7 @@ const useMutation = <T = any, R = any>({
                         "Content-Type": "application/json",
                         ...headers,
                     },
-                    body: body !== undefined ? JSON.stringify(body) : undefined,
+                    body: body ? JSON.stringify(body) : undefined,
                 });
 
                 if (!response.ok) {

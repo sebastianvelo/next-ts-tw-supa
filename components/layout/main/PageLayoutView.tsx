@@ -1,11 +1,11 @@
 import PageHeader from "@/components/layout/main/header/PageHeader";
-import LayoutViewDTO from "@/core/view/DTO/page/layout";
+import LayoutViewDTO from "@/presentation/view/dto/page/layout";
 import PageNavigator from "./navigator/PageNavigator";
 
-interface PageLayoutViewProps extends LayoutViewDTO<any>, React.PropsWithChildren { }
+interface PageLayoutViewProps extends LayoutViewDTO, React.PropsWithChildren { }
 
 const PageLayoutView: React.FC<PageLayoutViewProps> = ({ header, tabs, children }) => (
-  <div className="animate-slide-in-left">
+  <div className="">
     <PageHeader {...header} />
     <PageNavigator tabs={tabs}>
       {children}

@@ -1,5 +1,5 @@
 import Model from "@/core/model/Model";
-import User from "@/lib/user/model";
+import User from "@/modules/user/domain/model";
 import { faker } from "@faker-js/faker";
 import * as fs from "fs";
 import * as path from "path";

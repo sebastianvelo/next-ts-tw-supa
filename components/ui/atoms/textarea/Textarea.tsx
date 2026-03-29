@@ -1,7 +1,8 @@
+"use client"
 import useI18N from "@/hooks/lang/useI18N";
-import React from "react";
+import getStyle from "./styles";
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: string;
     error?: string;
 }
@@ -16,7 +17,7 @@ const Textarea: React.FC<TextareaProps> = ({ label, error, className = "", ...pr
                     {t(label)}
                 </label>
             )}
-            <textarea className={`dark:bg-secondary-950/50 dark:text-secondary-50 w-full px-3 py-2 border border-secondary-300 dark:border-secondary-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none ${error ? "border-red-500" : ""} ${className}`}
+            <textarea className={`${getStyle({ variant: error ? "error" : "default" })} ${className}`}
                 {...props} placeholder={t(props.placeholder)}
             />
             {error && (

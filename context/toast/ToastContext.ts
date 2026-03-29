@@ -1,4 +1,4 @@
-import { ToastVariant } from "@/components/ui/molecules/toast/types/types";
+import { ToastVariant } from "@/molecules/toast/types/types";
 import { createContext } from "react";
 
 export interface ToastContextValue {

@@ -1,18 +1,8 @@
-import Text from "@/components/ui/atoms/text/Text";
-import Card from "@/components/ui/molecules/card/Card";
-import CardBody from "@/components/ui/molecules/card/CardBody";
-import CardHeader from "@/components/ui/molecules/card/CardHeader";
-import CheckboxGroup from "@/components/ui/molecules/input/CheckboxGroup";
-import RadioGroup from "@/components/ui/molecules/input/RadioGroup";
-import TextareaSection from "@/components/ui/molecules/input/TextareaSection";
-import QuestionDTO from "@/core/view/DTO/form/question";
-import QuestionType from "@/lib/question/model/enum/question-type";
-
-const QUESTION_COMPONENTS = {
-  [QuestionType.MULTIPLE_CHOICE]: RadioGroup,
-  [QuestionType.MULTISELECT]: CheckboxGroup,
-  [QuestionType.FREE_TEXT]: TextareaSection,
-};
+import Text from "@/atoms/text/Text";
+import QuestionType from "@/modules/question/domain/model/enum/question-type";
+import CardBody from "@/molecules/card/CardBody";
+import QUESTION_COMPONENTS from "@/molecules/question/QuestionComponent";
+import QuestionDTO from "@/presentation/view/dto/form/question";
 
 export interface QuestionProps extends QuestionDTO<QuestionType> {
   value?: string | string[];
@@ -23,14 +13,13 @@ const Question: React.FC<QuestionProps> = ({ id, prompt, options, type, value, o
   const QuestionComponent = type ? QUESTION_COMPONENTS[type] : null;
 
   return (
-    <Card className="animate-slide-in-left xl:animate-slide-in-bottom">
-      <CardHeader>
-        <Text weight="bold" size="lg">{prompt}</Text>
-      </CardHeader>
+    <div className="animate-slide-in-bottom">
+      <Text weight="bold" size="lg">{prompt}</Text>
       <CardBody>
         {QuestionComponent ? (
           <QuestionComponent
             id={id}
+            prompt={prompt}
             options={options}
             value={value as any}
             onChange={onChange as any}
@@ -39,7 +28,7 @@ const Question: React.FC<QuestionProps> = ({ id, prompt, options, type, value, o
           <Text>Tipo de pregunta no soportado</Text>
         )}
       </CardBody>
-    </Card>
+    </div>
   );
 };
 

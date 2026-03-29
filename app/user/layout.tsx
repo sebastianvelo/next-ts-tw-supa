@@ -1,15 +1,14 @@
 "use client"
-import EmptySection from "@/components/ui/layout/empty-section/EmptySection";
-import Loading from "@/components/ui/molecules/loading/Loading";
-import UserLayoutView from "@/components/view/user/UserLayoutView";
 import useAuth from "@/hooks/auth/useAuth";
 import useFetchViewWithId from "@/hooks/view/useFetchViewWithId";
-import UserLayoutViewDTO from "@/lib/user/view/builders/layout/dto";
-import API from "@/routes/api/routes";
-import ROUTES from "@/routes/client/routes";
-import { PropsWithChildren } from "react";
+import EmptySection from "@/layout/empty-section/EmptySection";
+import UserLayoutViewDTO from "@/modules/user/presentation/view/builders/layout/dto";
+import Loading from "@/molecules/loading/Loading";
+import API from "@/routes/api";
+import ROUTES from "@/routes/client";
+import UserLayoutView from "@/view/user/UserLayoutView";
 
-const UserPageLayout: React.FC<PropsWithChildren> = ({ children }) => {
+const UserPageLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { user } = useAuth();
   const { props, isLoading, error } = useFetchViewWithId<UserLayoutViewDTO>({
     route: API.USERS.BY_ID,

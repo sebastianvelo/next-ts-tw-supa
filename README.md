@@ -1,3 +1,5 @@
+# Klass
+
 This is a **Next.js 16** project using **TypeScript**, **Tailwind CSS**, and **Supabase**.
 
 ## Project Structure

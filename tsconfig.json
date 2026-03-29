@@ -23,9 +23,27 @@
       }
     ],
     "paths": {
+      "@/atoms/*": [
+        "./components/ui/atoms/*"
+      ],
+      "@/molecules/*": [
+        "./components/ui/molecules/*"
+      ],
+      "@/organisms/*": [
+        "./components/ui/organisms/*"
+      ],
+      "@/form/*": [
+        "./components/ui/form/*"
+      ],
+      "@/layout/*": [
+        "./components/ui/layout/*"
+      ],
+      "@/view/*": [
+        "./components/view/*"
+      ],
       "@/*": [
         "./*"
-      ]
+      ],
     }
   },
   "include": [
@@ -34,7 +52,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "scripts/check-ddd.JS"
   ],
   "exclude": [
     "node_modules"

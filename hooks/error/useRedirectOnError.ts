@@ -1,5 +1,5 @@
-"use client";
-import ROUTES from "@/routes/client/routes";
+"use client"
+import ROUTES from "@/routes/client";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import useNavigationError from "./useNavigationError";

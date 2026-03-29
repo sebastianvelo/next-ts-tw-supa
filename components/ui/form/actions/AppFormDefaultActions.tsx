@@ -1,5 +1,5 @@
-import Button from "@/components/ui/atoms/button/Button";
-import CardFooter from "../../molecules/card/CardFooter";
+import Button from "@/atoms/button/Button";
+import CardFooter from "@/molecules/card/CardFooter";
 import { Loader, RotateCcw, SendHorizonal } from "lucide-react";
 import { UseFormReset } from "react-hook-form";
 

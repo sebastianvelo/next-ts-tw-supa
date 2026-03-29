@@ -1,6 +1,6 @@
 "use client"
 import useClickOutside from "@/hooks/app/useClickOutside";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export interface SelectOption {
     label: string;
@@ -21,28 +21,37 @@ interface UseSelectInput {
     setIsOpen: (isOpen: boolean) => void;
     toggleDropdown: () => void;
     handleOptionSelect: (option: SelectOption) => void;
+    searchTerm: string;
+    setSearchTerm: (term: string) => void;
 }
 
 const useSelectInput = ({ options, initialValue = "", onChange }: UseSelectInputProps): UseSelectInput => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState<string | number>(initialValue);
-    const [selectedLabel, setSelectedLabel] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
     const selectRef = useRef<HTMLDivElement>(null);
 
-    const toggleDropdown = () => setIsOpen(!isOpen);
+    // Derived directly — no useEffect or extra state needed
+    const selectedLabel = options.find(opt => opt.value.toString() === selectedValue.toString())?.label ?? "";
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+        if (!isOpen) {
+            setSearchTerm("");
+        }
+    };
+
     const handleOptionSelect = (option: SelectOption) => {
         setSelectedValue(option.value);
         if (onChange) { onChange(option.value); }
         setIsOpen(false);
+        setSearchTerm("");
     };
 
-    useClickOutside(selectRef, () => setIsOpen(false));
-
-    useEffect(() => {
-        const option = options.find(opt => opt.value.toString() === selectedValue.toString());
-        setSelectedLabel(option ? option.label : "");
-    }, [selectedValue, options]);
-
+    useClickOutside(selectRef, () => {
+        setIsOpen(false);
+        setSearchTerm("");
+    });
 
     return {
         selectedValue,
@@ -51,7 +60,9 @@ const useSelectInput = ({ options, initialValue = "", onChange }: UseSelectInput
         selectRef,
         setIsOpen,
         toggleDropdown,
-        handleOptionSelect
+        handleOptionSelect,
+        searchTerm,
+        setSearchTerm
     };
 };
 

@@ -1,4 +1,4 @@
-import { TableHeaderDTO } from "@/core/view/DTO/common/table";
+import { TableHeaderDTO } from "@/presentation/view/dto/common/table";
 import useI18N from "@/hooks/lang/useI18N";
 import React from "react";
 

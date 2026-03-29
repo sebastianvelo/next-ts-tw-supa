@@ -1,4 +1,4 @@
-import User from "@/lib/user/model";
+import User from "@/modules/user/domain/model";
 import { getID, getTimestamps } from "@/mock/utils";
 import { faker } from "@faker-js/faker";
 

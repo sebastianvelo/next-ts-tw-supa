@@ -1,7 +1,7 @@
 "use client"
-import Select from "@/components/ui/molecules/select/Select";
+import Select from "@/molecules/select/Select";
 import useIsMobile from "@/hooks/app/useIsMobile";
-import { SelectOption } from "@/components/ui/molecules/select/hooks/useSelectInput";
+import { SelectOption } from "@/molecules/select/hooks/useSelectInput";
 import useLanguage from "@/hooks/lang/useLanguage";
 import I18n from "@/locales/I18nKeys";
 import { Language } from "@/locales/types";

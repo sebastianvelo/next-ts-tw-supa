@@ -1,8 +1,8 @@
-"use client";
-import Button from "@/components/ui/atoms/button/Button";
-import FormFieldContainer from "@/components/ui/form/field/FormFieldContainer";
-import Card from "@/components/ui/molecules/card/Card";
-import FormFieldDTO from "@/core/view/DTO/form/form-field";
+"use client"
+import Button from "@/atoms/button/Button";
+import FormFieldContainer from "@/form/field/FormFieldContainer";
+import Card from "@/molecules/card/Card";
+import FormFieldDTO from "@/presentation/view/dto/form/form-field";
 import { TrashIcon } from "lucide-react";
 import { FieldValues, UseFieldArrayRemove } from "react-hook-form";
 
@@ -20,7 +20,7 @@ const ArrayFieldItem = <T extends FieldValues>({ index, name, fieldSchema, remov
                 <TrashIcon className="h-4" />
             </Button>
         </div>
-        <div className="space-y-4">
+        <div className="grid grid-cols-6 gap-4 w-full">
             {fieldSchema.map((fieldSchema) => (
                 <FormFieldContainer
                     key={fieldSchema.name as string}

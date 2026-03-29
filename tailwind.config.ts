@@ -8,6 +8,7 @@ export default {
         "./components/**/*.{js,ts,jsx,tsx}",
         "./hooks/**/*.{js,ts,jsx,tsx}",
         "./context/**/*.{js,ts,jsx,tsx}",
+        "./presentation/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         extend: {
@@ -60,11 +61,38 @@ export default {
                     "0%": { transform: "translateY(30%)", opacity: "0" },
                     "100%": { transform: "translateY(0)", opacity: "1" },
                 },
+                "slide-in-top": {
+                    from: { opacity: "0", transform: "translateY(-40px)" },
+                    to: { opacity: "1", transform: "translateY(0)" },
+                },
+                "scale-up": {
+                    from: { opacity: "0", transform: "scale(0.88)" },
+                    to: { opacity: "1", transform: "scale(1)" },
+                },
+                "fade-blur": {
+                    from: { opacity: "0", filter: "blur(8px)", transform: "scale(0.97)" },
+                    to: { opacity: "1", filter: "blur(0px)", transform: "scale(1)" },
+                },
+                "flip-in": {
+                    from: { opacity: "0", transform: "perspective(600px) rotateX(-20deg) translateY(20px)" },
+                    to: { opacity: "1", transform: "perspective(600px) rotateX(0deg) translateY(0)" },
+                },
+                "elastic-pop": {
+                    "0%": { opacity: "0", transform: "scale(0.5)" },
+                    "60%": { opacity: "1", transform: "scale(1.05)" },
+                    "80%": { transform: "scale(0.97)" },
+                    "100%": { transform: "scale(1)" },
+                },
             },
             animation: {
-                "slide-in-right": "slide-in-right 0.2s ease-out",
-                "slide-in-left": "slide-in-left 0.2s ease-in-out",
-                "slide-in-bottom": "slide-in-bottom 0.2s ease-out",
+                "slide-in-right": "slide-in-right 0.3s ease-out",
+                "slide-in-left": "slide-in-left 0.3s ease-in-out",
+                "slide-in-bottom": "slide-in-bottom 0.3s ease-out",
+                "slide-in-top": "slide-in-top 0.3s cubic-bezier(0.22,1,0.36,1)",
+                "scale-up": "scale-up 0.25s cubic-bezier(0.34,1.56,0.64,1)",
+                "fade-blur": "fade-blur 0.3s ease-out",
+                "flip-in": "flip-in 0.35s cubic-bezier(0.22,1,0.36,1)",
+                "elastic-pop": "elastic-pop 0.45s ease-out",
             },
         },
     },

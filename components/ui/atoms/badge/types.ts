@@ -1,14 +1,5 @@
-export type BadgeVariant =
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "success"
-    | "danger"
-    | "warning"
-    | "info"
-    | "default"
-    | "neutral"
-    | "outline";
+import type { BadgeVariant } from "@/presentation/view/dto/common/badge";
+export type { BadgeVariant };
 
 export type BadgeSize = "xs" | "sm" | "md" | "lg" | "xl";
 

@@ -1,5 +1,5 @@
-import Action from "@/components/ui/molecules/action/Action";
-import ActionDTO from "@/core/view/DTO/common/action";
+import Action from "@/molecules/action/Action";
+import ActionDTO from "@/presentation/view/dto/common/action";
 import React from "react";
 
 interface HeaderActionsProps {

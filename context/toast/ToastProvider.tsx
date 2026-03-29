@@ -1,6 +1,6 @@
 "use client"
-import Toast from "@/components/ui/molecules/toast/Toast";
-import { ToastMessage, ToastVariant } from "@/components/ui/molecules/toast/types/types";
+import Toast from "@/molecules/toast/Toast";
+import { ToastMessage, ToastVariant } from "@/molecules/toast/types/types";
 import { FC, ReactNode, useState, useCallback, useMemo } from "react";
 import ToastContext from "./ToastContext";
 

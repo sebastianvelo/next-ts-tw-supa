@@ -1,6 +1,6 @@
 import PageContent from "@/components/layout/main/content/PageContent";
-import TextListSection from "@/components/ui/layout/text-section/TextListSection";
-import UserHomeViewDTO from "@/lib/user/view/builders/home/dto";
+import TextListSection from "@/layout/text-section/TextListSection";
+import UserHomeViewDTO from "@/modules/user/presentation/view/builders/home/dto";
 
 interface UserHomeViewProps extends UserHomeViewDTO { }
 

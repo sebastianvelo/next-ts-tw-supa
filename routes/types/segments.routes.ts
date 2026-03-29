@@ -1,9 +1,17 @@
+const ENTITIES = {
+    USER: "user",
+};
+
+const ACTIONS = {
+}
+
 const SEGMENTS = {
     NOT_FOUND: "not-found",
     LOGIN: "login",
-    USER: "user",
     HOME: "home",
     NEW: "new",
+    ...ENTITIES,
+    ...ACTIONS
 } as const;
 
 export type Segment = keyof typeof SEGMENTS;

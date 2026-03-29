@@ -1,4 +1,4 @@
-import ActionDTO from "@/core/view/DTO/common/action";
+import ActionDTO from "@/presentation/view/dto/common/action";
 import Action from "../action/Action";
 import CardFooter from "./CardFooter";
 
@@ -10,8 +10,8 @@ interface CardActionsProps {
 const CardActions: React.FC<CardActionsProps> = ({ actions, className = "" }) => (
     actions && actions.length > 0 && (
         <CardFooter className={`flex justify-end gap-2 ${className}`}>
-            {actions.map((action) => (
-                <Action {...action} />
+            {actions.map((action, index) => (
+                <Action key={action.label || index} {...action} />
             ))}
         </CardFooter>
     )

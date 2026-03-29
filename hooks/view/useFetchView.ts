@@ -25,9 +25,7 @@ const useFetchView = <T>(url?: string | null, options?: FetchViewOptions): Fetch
 
     const { data: props, error, isLoading } = useSWR<T, ResponseFetchError>(urlWithParams, fetcher);
 
-    if (options?.redirectOnError) {
-        useRedirectOnError(error, options.fallback);
-    }
+    useRedirectOnError(options?.redirectOnError ? error : undefined, options?.fallback);
 
     return {
         props,

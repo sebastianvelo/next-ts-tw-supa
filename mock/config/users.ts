@@ -1,4 +1,4 @@
-import User from "@/lib/user/model";
+import User from "@/modules/user/domain/model";
 
 const usersToLogIn: User[] = [
     {
@@ -12,7 +12,7 @@ const usersToLogIn: User[] = [
     },
     {
         id: "usr-l7c",
-        authId: "cea73346-7b32-4f91-8808P-995ee32939bd",
+        authId: "cea73346-7b32-4f91-8808-995ee32939bd",
         name: "Isabella Wunsch",
         avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=Isabella",
         email: "Isabella_Wunsch97@hotmail.com",

@@ -1,5 +1,5 @@
-"use client";
-import ROUTES from "@/routes/client/routes";
+"use client"
+import ROUTES from "@/routes/client";
 import { redirect } from "next/navigation";
 
 export default function NotFound() {

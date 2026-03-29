@@ -1,14 +1,9 @@
-import CardListSection from "@/components/ui/layout/card-section/CardListSection";
-import EmptySection from "@/components/ui/layout/empty-section/EmptySection";
-import { FallbackProps } from "@/components/ui/layout/fallback/Fallback";
-import { CardListSectionDTO } from "@/core/view/DTO/list-section/card-list-section";
-import ListViewDTO from "@/core/view/DTO/list-view/list-view";
-import PageListView from "../list/PageListView";
+import PageListView, { IPageListViewProps } from "@/components/layout/page/list/PageListView";
+import CardListSection from "@/layout/card-section/CardListSection";
+import EmptySection from "@/layout/empty-section/EmptySection";
+import CardListSectionDTO from "@/presentation/view/dto/list-section/card-list-section";
 
-export interface PageCardListViewProps extends ListViewDTO<CardListSectionDTO> {
-    isLoading: boolean;
-    fallback?: FallbackProps;
-}
+export interface PageCardListViewProps extends IPageListViewProps<CardListSectionDTO> { }
 
 const PageCardListView: React.FC<PageCardListViewProps> = ({ fallback, ...props }) => (
     <PageListView<CardListSectionDTO>

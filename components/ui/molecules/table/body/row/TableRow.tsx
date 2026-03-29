@@ -1,6 +1,6 @@
-import { TableHeaderDTO } from "@/core/view/DTO/common/table";
+import { TableHeaderDTO } from "@/presentation/view/dto/common/table";
 import React from "react";
-import RowCell from "./RowCell";
+import RowCell from "./cells/RowCell";
 
 const getRowClass = (rowIndex: number): string => {
     const isEvenRow = rowIndex % 2 === 0;

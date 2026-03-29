@@ -1,4 +1,4 @@
-import LoginLayoutView from "@/components/view/login/LoginLayoutView";
+import LoginLayoutView from "@/view/login/LoginLayoutView";
 
 const LoginPage: React.FC = () => {
     return <LoginLayoutView />;

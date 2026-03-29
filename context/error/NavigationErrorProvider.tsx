@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { PropsWithChildren, useMemo, useState } from "react";
 import NavigationErrorContext from "./NavigationErrorContext";
 

@@ -1,10 +1,10 @@
+"use client"
 import useI18N from "@/hooks/lang/useI18N";
 import { X } from "lucide-react";
-import React from "react";
-import getStyle from "./Badge.styles";
+import getStyle from "./styles";
 import { BadgeStyleProps } from "./types";
 
-interface BadgeProps extends BadgeStyleProps, React.HTMLAttributes<HTMLSpanElement> {
+export interface BadgeProps extends BadgeStyleProps, React.HTMLAttributes<HTMLSpanElement> {
     label?: string;
     icon?: React.ReactNode;
     onRemove?: () => void;

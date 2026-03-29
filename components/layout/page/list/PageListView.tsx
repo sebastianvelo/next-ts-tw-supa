@@ -1,26 +1,39 @@
 import PageContent from "@/components/layout/main/content/PageContent";
-import FiltersSection from "@/components/ui/molecules/filters/FiltersSection";
-import Loading from "@/components/ui/molecules/loading/Loading";
-import Paginator from "@/components/ui/molecules/paginator/Paginator";
-import ListViewDTO from "@/core/view/DTO/list-view/list-view";
-import { FallbackProps } from "@/components/ui/layout/fallback/Fallback";
+import { FallbackProps } from "@/layout/fallback/Fallback";
+import Loading from "@/molecules/loading/Loading";
+import Paginator from "@/molecules/paginator/Paginator";
+import { getGridCols } from "@/presentation/view/constants/layout";
+import ListViewDTO from "@/presentation/view/dto/list-view/list-view";
+import PageListViewFilters from "./filters/PageListViewFilters";
+import { PageListViewConfig, PageListViewLayout } from "./types";
 
-export interface PageListViewProps<T> extends ListViewDTO<T> {
+export interface IPageListViewProps<T> extends ListViewDTO<T> {
     isLoading: boolean;
-    ListSection: React.FC<T>;
     fallback?: FallbackProps;
+    config?: PageListViewConfig;
+    className?: string;
 }
 
-function PageListView<T>({ isLoading, filters, list, paginator, ListSection, fallback }: Readonly<PageListViewProps<T>>) {
+export interface PageListViewProps<T> extends IPageListViewProps<T> {
+    ListSection: React.FC<T>;
+}
+
+function PageListView<T>({ isLoading, filters, list, paginator, ListSection, fallback, config, className }: Readonly<PageListViewProps<T>>) {
+    const isHorizontal = config?.layout === PageListViewLayout.HORIZONTAL;
+    const wrapperClassName = isHorizontal ? "md:grid md:grid-cols-5 w-full" : "w-full";
+    const contentClassName = isHorizontal ? "col-span-5 md:col-span-4 space-y-4" : "";
+
     return (
-        <PageContent>
-            <div className="flex">
-                {filters?.map((filter) => <FiltersSection key={filter.param} {...filter} />)}
+        <PageContent className={`${wrapperClassName} ${className}`}>
+            {filters && (
+                <PageListViewFilters filters={filters} config={config?.filters} />
+            )}
+            <div className={contentClassName}>
+                <Loading isLoading={isLoading}>
+                    {list && <ListSection {...list} fallback={fallback} className={getGridCols(config?.columns ?? 1)} />}
+                </Loading>
+                {paginator && <Paginator {...paginator} />}
             </div>
-            <Loading isLoading={isLoading}>
-                {list && <ListSection {...list} fallback={fallback} />}
-            </Loading>
-            {paginator && <Paginator {...paginator} />}
         </PageContent>
     );
 }

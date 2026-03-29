@@ -1,5 +1,5 @@
-import BreadcrumbDTO from "@/core/view/DTO/common/breadcrumb";
-import BreadcrumbItem from "./BreadcrumbItem";
+import BreadcrumbDTO from "@/presentation/view/dto/common/breadcrumb";
+import BreadcrumbItem from "./item/BreadcrumbItem";
 
 interface BreadcrumbProps extends BreadcrumbDTO {
     className?: string;

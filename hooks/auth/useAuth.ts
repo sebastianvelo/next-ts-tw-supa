@@ -1,6 +1,6 @@
-import API from "@/routes/api/routes";
-import ROUTES from "@/routes/client/routes";
-import User from "@/lib/user/model";
+import API from "@/routes/api";
+import ROUTES from "@/routes/client";
+import User from "@/modules/user/domain/model";
 import { useEffect, useState } from "react";
 
 interface UseAuthReturn {

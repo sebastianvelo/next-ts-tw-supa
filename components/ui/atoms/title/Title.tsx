@@ -1,9 +1,9 @@
+"use client"
 import useI18N from "@/hooks/lang/useI18N";
-import React from "react";
-import getStyle from "./Title.styles";
+import getStyle from "./styles";
 import { TitleLevel, TitleStyleProps } from "./types";
 
-interface TitleProps extends TitleStyleProps, React.HTMLAttributes<HTMLHeadingElement> {
+export interface TitleProps extends TitleStyleProps, React.HTMLAttributes<HTMLHeadingElement> {
     as?: TitleLevel;
     t?: string;
 }

@@ -1,5 +1,5 @@
 import PageLayoutView from "@/components/layout/main/PageLayoutView";
-import UserLayoutViewDTO from "@/lib/user/view/builders/layout/dto";
+import UserLayoutViewDTO from "@/modules/user/presentation/view/builders/layout/dto";
 
 interface UserLayoutViewProps extends UserLayoutViewDTO, React.PropsWithChildren { }
 

@@ -1,7 +1,6 @@
 "use client"
 import useI18N from "@/hooks/lang/useI18N";
-import React from "react";
-import getStyle from "./Button.styles";
+import getStyle from "./styles";
 import { ButtonStyleProps } from "./types";
 
 export interface ButtonProps extends ButtonStyleProps, React.ButtonHTMLAttributes<HTMLButtonElement> {

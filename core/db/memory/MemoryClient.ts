@@ -1,5 +1,5 @@
-import TABLES from "@/core/app/db/Tables";
-import User from "@/lib/user/model";
+import TABLES from "@/core/db/Tables";
+import User from "@/modules/user/domain/model";
 import usersMock from "@/mock/generated/users.json";
 
 const MemoryClient = {

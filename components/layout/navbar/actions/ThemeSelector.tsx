@@ -1,5 +1,5 @@
-"use client";
-import Text from "@/components/ui/atoms/text/Text";
+"use client"
+import Text from "@/atoms/text/Text";
 import useTheme from "@/hooks/theme/useTheme";
 import I18n from "@/locales/I18nKeys";
 

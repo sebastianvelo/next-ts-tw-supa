@@ -1,4 +1,5 @@
 enum QueryParam {
+    ROLE = "role",
     SEARCH = "search",
     PAGE = "page",
     LIMIT = "limit",
@@ -6,7 +7,8 @@ enum QueryParam {
     ORDER = "order",
     STATUS = "status",
     TYPE = "type",
-    VISIBILITY = "visibility"
+    VISIBILITY = "visibility",
+    NAME = "name"
 }
 
 export default QueryParam;

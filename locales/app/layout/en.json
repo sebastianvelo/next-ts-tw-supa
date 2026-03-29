@@ -3,5 +3,6 @@
     "navbar.sign-out.button": "Sign out",
     "loading.label": "Loading...",
     "navbar.theme.title": "Theme",
-    "navbar.language.title": "Language"
+    "navbar.language.title": "Language",
+    "common.home-button": "Home"
 }

@@ -1,10 +1,10 @@
-import Input from "@/components/ui/atoms/input/Input";
-import Textarea from "@/components/ui/atoms/textarea/Textarea";
-import ArrayField from "@/components/ui/form/field/array/ArrayField";
-import Question from "@/components/ui/form/field/questions/Question";
-import Select from "@/components/ui/molecules/select/Select";
-import { FormFieldType } from "@/core/forms/types";
-import FormFieldDTO from "@/core/view/DTO/form/form-field";
+import Input from "@/atoms/input/Input";
+import Textarea from "@/atoms/textarea/Textarea";
+import ArrayField from "@/form/field/array/ArrayField";
+import Question from "@/form/field/questions/Question";
+import Select from "@/molecules/select/Select";
+import { FormFieldType } from "@/presentation/forms/types";
+import FormFieldDTO from "@/presentation/view/dto/form/form-field";
 import { Controller, FieldValues, Path, useFormContext } from "react-hook-form";
 
 const FieldComponent = (type: FormFieldType) => {
@@ -24,6 +24,7 @@ const FormField = <T extends FieldValues>({ type, name, label, placeholder, defa
                 name={name as string}
                 fields={fields || []}
                 addButtonLabel={addButtonLabel}
+                label={label}
             />
         );
     }
@@ -54,7 +55,7 @@ const FormField = <T extends FieldValues>({ type, name, label, placeholder, defa
 
     const Field = FieldComponent(type);
 
-    return <Field {...props} />;
+    return <Field {...props as any} />;
 };
 
 export default FormField;

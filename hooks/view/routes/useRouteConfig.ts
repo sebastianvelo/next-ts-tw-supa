@@ -12,7 +12,7 @@ const useRouteConfig = (): UseRouteConfig => {
     const pathname = usePathname();
 
     const config = useMemo(() => {
-        const normalizedPath = pathname.replace(/\/[a-zA-Z0-9_-]+(?=\/|$)/g, (match, offset) => {
+        const normalizedPath = pathname.replaceAll(/\/[a-zA-Z0-9_-]+(?=\/|$)/g, (match, offset) => {
             if (offset === 0 && Object.values(SEGMENTS).includes(match.slice(1) as any)) {
                 return match;
             }

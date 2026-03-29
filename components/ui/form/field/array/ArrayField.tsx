@@ -1,8 +1,8 @@
-"use client";
-import Button from "@/components/ui/atoms/button/Button";
-import Text from "@/components/ui/atoms/text/Text";
-import { FormFieldType } from "@/core/forms/types";
-import FormFieldDTO from "@/core/view/DTO/form/form-field";
+"use client"
+import Button from "@/atoms/button/Button";
+import Text from "@/atoms/text/Text";
+import { FormFieldType } from "@/presentation/forms/types";
+import FormFieldDTO from "@/presentation/view/dto/form/form-field";
 import useI18N from "@/hooks/lang/useI18N";
 import { PlusIcon } from "lucide-react";
 import { FieldValues, useFieldArray, useFormContext } from "react-hook-form";
@@ -11,7 +11,7 @@ import ArrayFieldItem from "./ArrayFieldItem";
 interface ArrayFieldProps<T extends FieldValues> {
     name: string;
     label?: string;
-    fields: FormFieldDTO<any>[];
+    fields: FormFieldDTO<T>[];
     addButtonLabel?: string;
 }
 
@@ -33,8 +33,7 @@ const ArrayField = <T extends FieldValues>({ name, label, fields: schema, addBut
 
     return (
         <div className="space-y-4">
-            {label && <Text t={label} size="sm" weight="medium" />}
-
+            <Text t={label} size="sm" weight="medium" />
             <div className="space-y-4">
                 {fields.map((field, index) => (
                     <ArrayFieldItem

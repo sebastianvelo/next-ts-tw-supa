@@ -1,7 +1,7 @@
-import Text from "@/components/ui/atoms/text/Text";
-import Title from "@/components/ui/atoms/title/Title";
-import PageHeaderDTO from "@/core/view/DTO/page/header";
-import HeaderImage from "./HeaderImage";
+import Avatar from "@/atoms/avatar/Avatar";
+import Text from "@/atoms/text/Text";
+import Title from "@/atoms/title/Title";
+import PageHeaderDTO from "@/presentation/view/dto/page/header";
 
 export interface HeaderContentProps extends Pick<PageHeaderDTO, "title" | "subtitle" | "content" | "image"> { }
 
@@ -9,7 +9,7 @@ const HeaderContent: React.FC<HeaderContentProps> = ({ title, subtitle, content,
   <div className="space-y-2">
     <div className="flex items-center space-x-2">
       {image && (
-        <HeaderImage src={image} />
+        <Avatar src={image} size="xl" rounded="none" />
       )}
 
       <Title size="xl" className="sm:text-2xl tracking-tight">

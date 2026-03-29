@@ -1,8 +1,8 @@
 "use client"
-import Loading from "@/components/ui/molecules/loading/Loading";
-import UserHomeView from "@/components/view/user/home/UserHomeView";
+import Loading from "@/molecules/loading/Loading";
+import UserHomeView from "@/view/user/home/UserHomeView";
 import useFetchCurrentUserView from "@/hooks/view/useFetchCurrentUserView";
-import UserHomeViewDTO from "@/lib/user/view/builders/home/dto";
+import UserHomeViewDTO from "@/modules/user/presentation/view/builders/home/dto";
 
 const UserHomePage: React.FC = () => {
   const { props, isLoading, error } = useFetchCurrentUserView<UserHomeViewDTO>();

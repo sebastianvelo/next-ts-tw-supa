@@ -7,6 +7,7 @@ abstract class BaseRepository<T extends Model> {
     protected abstract TABLE: string;
 
     abstract findAll(): Promise<T[]>;
+    abstract findAllPaginated(query?: QueryParams<T>): Promise<PaginatedResult<T>>;
     abstract findById(id: string): Promise<T | null>;
     abstract findByIds(ids: string[]): Promise<T[]>;
     abstract findAndCountByIds(ids: string[], query?: QueryParams<T>): Promise<PaginatedResult<T>>;

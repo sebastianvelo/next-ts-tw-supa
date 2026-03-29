@@ -1,6 +1,6 @@
 "use client"
 import { SelectOption } from "@/components/ui/molecules/select/hooks/useSelectInput";
-import { selectStyles } from "./Select.styles";
+import { selectStyles } from "./styles";
 
 interface SelectOptionsProps {
     options: SelectOption[];
@@ -13,6 +13,7 @@ interface SelectOptionsProps {
 
 const SelectOptions: React.FC<SelectOptionsProps> = ({ options, selectedValue, isOpen, labelledById, onSelect, t }) => (
     <ul
+        id={`${labelledById}-listbox`}
         className={`${selectStyles.list} ${isOpen ? selectStyles.listOpen : selectStyles.listClosed}`}
         role="listbox"
         aria-labelledby={labelledById}

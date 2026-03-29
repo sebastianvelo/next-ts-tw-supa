@@ -1,11 +1,11 @@
-"use client";
+"use client"
 import Brand from "@/components/ui/app/Brand";
-import Text from "@/components/ui/atoms/text/Text";
-import Card from "@/components/ui/molecules/card/Card";
-import CardFooter from "@/components/ui/molecules/card/CardFooter";
-import CardBody from "@/components/ui/molecules/card/CardBody";
-import CardHeader from "@/components/ui/molecules/card/CardHeader";
-import GoogleSignInButton from "@/components/view/login/ui/GoogleSignInButton";
+import Text from "@/atoms/text/Text";
+import Card from "@/molecules/card/Card";
+import CardFooter from "@/molecules/card/CardFooter";
+import CardBody from "@/molecules/card/CardBody";
+import CardHeader from "@/molecules/card/CardHeader";
+import GoogleSignInButton from "@/view/login/ui/GoogleSignInButton";
 import I18n from "@/locales/I18nKeys";
 
 const LoginLayoutView: React.FC = () => (

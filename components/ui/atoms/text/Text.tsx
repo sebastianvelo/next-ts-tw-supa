@@ -1,6 +1,6 @@
+"use client"
 import useI18N from "@/hooks/lang/useI18N";
-import React from "react";
-import getStyle from "./Text.styles";
+import getStyle from "./styles";
 import { TextStyleProps } from "./types";
 
 export interface TextProps extends TextStyleProps, React.HTMLAttributes<HTMLElement> {

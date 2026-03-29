@@ -1,4 +1,4 @@
-import User from "@/lib/user/model";
+import User from "@/modules/user/domain/model";
 import QUANTITY from "../config/quantity";
 import usersToLogIn from "../config/users";
 import UsersBuilder from "../factory/user";

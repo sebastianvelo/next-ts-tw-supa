@@ -1,4 +1,4 @@
-import API from "@/routes/api/routes";
+import API from "@/routes/api";
 import { createClient } from "@/core/db/supabase/SupabaseClient";
 import { Provider } from "@supabase/supabase-js";
 

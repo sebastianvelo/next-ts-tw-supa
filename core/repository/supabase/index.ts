@@ -4,19 +4,25 @@ import BaseRepository from "@/core/repository";
 import PaginatedResult from "@/core/types/PaginatedResult";
 import QueryParams from "@/core/types/QueryParams";
 import { Without } from "@/core/types/Without";
+import { SupabaseClient } from "@supabase/supabase-js";
 
 abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
     protected abstract TABLE: string;
+    protected CLIENT: () => Promise<SupabaseClient> = createClient;
 
     async findAll(): Promise<T[]> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
         const { data, error } = await supabase.from(this.TABLE).select("*");
         if (error) throw error;
         return data || [];
     }
 
+    async findAllPaginated(query?: QueryParams<T>): Promise<PaginatedResult<T>> {
+        return this.findAndCount(query);
+    }
+
     async findById(id: string): Promise<T | null> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
         const { data, error } = await supabase
             .from(this.TABLE)
             .select("*")
@@ -27,7 +33,7 @@ abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
     }
 
     async findByIds(ids: string[]): Promise<T[]> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
         const { data, error } = await supabase
             .from(this.TABLE)
             .select("*")
@@ -37,7 +43,7 @@ abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
     }
 
     async findAndCountByIds(ids: string[], query?: QueryParams<T>): Promise<PaginatedResult<T>> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
 
         let q = supabase
             .from(this.TABLE)
@@ -56,7 +62,7 @@ abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
     }
 
     protected async findByFields(query?: QueryParams<T>): Promise<T[]> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
 
         let q = supabase.from(this.TABLE).select("*");
 
@@ -78,7 +84,7 @@ abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
     }
 
     protected async findAndCount(query?: QueryParams<T>): Promise<PaginatedResult<T>> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
 
         let q = supabase
             .from(this.TABLE)
@@ -102,7 +108,7 @@ abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
     }
 
     async create(data: Without<T, Model>): Promise<T> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
         const { data: inserted, error } = await supabase
             .from(this.TABLE)
             .insert([data])
@@ -113,7 +119,7 @@ abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
     }
 
     async update(id: string, data: Partial<Without<T, Model>>): Promise<T | null> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
         const { data: updated, error } = await supabase
             .from(this.TABLE)
             .update({
@@ -128,7 +134,7 @@ abstract class SupabaseRepository<T extends Model> extends BaseRepository<T> {
     }
 
     async delete(id: string): Promise<boolean> {
-        const supabase = await createClient();
+        const supabase = await this.CLIENT();
         const { error } = await supabase
             .from(this.TABLE)
             .delete()

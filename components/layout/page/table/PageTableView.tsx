@@ -1,16 +1,11 @@
-import { FallbackProps } from "@/components/ui/layout/fallback/Fallback";
-import TableSection from "@/components/ui/layout/table-section/TableSection";
-import TableSectionDTO from "@/core/view/DTO/list-section/table-section";
-import ListViewDTO from "@/core/view/DTO/list-view/list-view";
-import PageListView from "../list/PageListView";
+import PageListView, { IPageListViewProps } from "@/components/layout/page/list/PageListView";
+import TableSection from "@/layout/table-section/TableSection";
+import TableSectionDTO from "@/presentation/view/dto/list-section/table-section";
 
-interface PageTableViewProps extends ListViewDTO<TableSectionDTO> {
-    isLoading: boolean;
-    fallback?: FallbackProps;
-}
+interface PageTableViewProps extends IPageListViewProps<TableSectionDTO> { }
 
 const PageTableView: React.FC<PageTableViewProps> = (props) => (
-    <PageListView<TableSectionDTO> ListSection={TableSection} {...props} />
+    <PageListView<TableSectionDTO> {...props} ListSection={TableSection} />
 );
 
 export default PageTableView;

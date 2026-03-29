@@ -1,11 +1,11 @@
-import FormFieldDTO from "@/core/view/DTO/form/form-field";
+import { FormFieldDependency } from "@/presentation/forms/types";
 import { Control, FieldErrors, FieldValues, Path, useWatch } from "react-hook-form";
 
 interface UseFormFieldProps<T extends FieldValues> {
     name: string;
     control: Control<T>;
     errors: FieldErrors<T>;
-    dependency?: FormFieldDTO<T>["dependency"];
+    dependency?: FormFieldDependency<T>;
 }
 
 const useFormField = <T extends FieldValues>({ name, control, errors, dependency }: UseFormFieldProps<T>) => {

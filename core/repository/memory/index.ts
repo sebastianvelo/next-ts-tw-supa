@@ -12,6 +12,10 @@ abstract class MemoryRepository<T extends Model> extends BaseRepository<T> {
         return this.getCollection();
     }
 
+    async findAllPaginated(query?: QueryParams<T>): Promise<PaginatedResult<T>> {
+        return this.findAndCount(query);
+    }
+
     async findById(id: string): Promise<T | null> {
         return this.getCollection().find((item) => item.id === id) ?? null;
     }

@@ -1,38 +1,26 @@
-import Tab from "@/components/ui/molecules/tabs/Tab";
-import { PageTabDTO } from "@/core/view/DTO/page/tabs";
+import Tab from "@/molecules/tabs/tab/Tab";
+import { TabType } from "@/molecules/tabs/tab/types";
+import { PageTabDTO } from "@/presentation/view/dto/page/tabs";
 import { usePathname } from "next/navigation";
-
-const baseParent =
-  "relative min-w-48 overflow-x-auto whitespace-nowrap gap-x-4 border-b sm:border-r border-secondary-300 dark:border-secondary-800 scrollbar-thin";
-const baseParentColor = "from-secondary-100 via-white to-secondary-100 dark:from-secondary-950 dark:via-secondary-900 dark:to-secondary-950";
-
-const nestedClassName =
-  "absolute flex flex-row sm:flex-col top-full left-0 sm:relative sm:top-0 sm:left-0 animate-slide-in-left sm:ml-1 border-l border-secondary-300 dark:border-secondary-800 pl-2";
-
-const parentClassName = (horizontal: boolean) => horizontal
-  ? `${baseParent} flex flex-row bg-gradient-to-r ${baseParentColor}`
-  : `${baseParent} flex flex-row sm:flex-col bg-gradient-to-b ${baseParentColor}`;
+import { nestedClassName, parentClassName } from "./styles";
 
 interface PageTabsProps {
-  tabs: PageTabDTO<any>[];
+  tabs: PageTabDTO[];
   nested?: boolean;
   horizontal?: boolean;
+  tabType?: TabType;
 }
 
-const PageTabs: React.FC<PageTabsProps> = ({ tabs, nested = false, horizontal = false }) => {
-  if (!tabs || tabs.length === 0) return null;
-
+const PageTabs: React.FC<PageTabsProps> = ({ tabs, nested = false, horizontal = false, tabType = TabType.GHOST }) => {
   const pathname = usePathname();
 
-  const isActive = (tab: PageTabDTO<any>) => tab.href === pathname;
+  if (!tabs || tabs.length === 0) return null;
 
-  const isActiveOrHasActiveChild = (tab: PageTabDTO<any>): boolean => {
+  const isActive = (tab: PageTabDTO) => tab.href === pathname;
+
+  const isActiveOrHasActiveChild = (tab: PageTabDTO): boolean => {
     if (isActive(tab)) return true;
-
-    if (tab.tabs) {
-      return tab.tabs.some(subTab => isActiveOrHasActiveChild(subTab));
-    }
-
+    if (tab.tabs) return tab.tabs.some((subTab) => isActiveOrHasActiveChild(subTab));
     return false;
   };
 
@@ -47,9 +35,10 @@ const PageTabs: React.FC<PageTabsProps> = ({ tabs, nested = false, horizontal = 
               label={tab.label}
               active={isActiveOrHasActiveChild(tab)}
               horizontal={horizontal}
+              type={tabType}
             />
             {isActiveOrHasActiveChild(tab) && !nested && (
-              <PageTabs tabs={tab.tabs} nested horizontal={horizontal} />
+              <PageTabs tabs={tab.tabs} nested horizontal={horizontal} tabType={tabType} />
             )}
           </div>
         ) : (
@@ -59,6 +48,7 @@ const PageTabs: React.FC<PageTabsProps> = ({ tabs, nested = false, horizontal = 
             {...tab}
             active={isActive(tab)}
             horizontal={horizontal}
+            type={tabType}
           />
         )
       )}

@@ -1,5 +1,5 @@
-import Text from "@/components/ui/atoms/text/Text";
-import ROUTES from "@/routes/client/routes";
+import Text from "@/atoms/text/Text";
+import ROUTES from "@/routes/client";
 import I18n from "@/locales/I18nKeys";
 import Link from "next/link";
 

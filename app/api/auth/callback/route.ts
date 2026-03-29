@@ -1,6 +1,7 @@
-import AuthService from "@/lib/auth/service";
-import UserService from "@/lib/user/service";
-import ROUTES from "@/routes/client/routes";
+import AuthService from "@/modules/auth/application/service";
+import UserService from "@/modules/user/application/service";
+import upsertFromOAuth from "@/modules/user/application/use-case/upsert-from-oauth";
+import ROUTES from "@/routes/client";
 import { NextResponse } from "next/server";
 
 /**
@@ -28,8 +29,8 @@ export async function GET(request: Request) {
             return NextResponse.redirect(`${origin}/auth-code-error`);
         }
 
-        const userData = await AuthService.prepareUserRegistrationData(data.user);
-        await UserService.upsertFromOAuth(userData);
+        const userData = UserService.prepareUserRegistrationData(data.user);
+        await upsertFromOAuth(userData);
 
         const forwardedHost = request.headers.get("x-forwarded-host");
         const base = await AuthService.buildRedirectUrl(origin, forwardedHost);

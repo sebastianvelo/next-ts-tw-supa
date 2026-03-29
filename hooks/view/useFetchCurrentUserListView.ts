@@ -1,4 +1,4 @@
-import ListViewDTO from "@/core/view/DTO/list-view/list-view";
+import ListViewDTO from "@/presentation/view/dto/list-view/list-view";
 import useAuth from "../auth/useAuth";
 import useFetchCurrentListView from "./useFetchCurrentListView";
 

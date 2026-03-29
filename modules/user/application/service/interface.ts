@@ -1,0 +1,20 @@
+import APIService from "@/core/service";
+import User from "@/modules/user/domain/model";
+import UserKeys from "@/modules/user/domain/model/keys";
+
+type ExcludeKeys =
+    typeof UserKeys.EMAIL |
+    typeof UserKeys.CREATEDAT |
+    typeof UserKeys.UPDATEDAT |
+    typeof UserKeys.NAME |
+    typeof UserKeys.AVATAR |
+    typeof UserKeys.AUTHID;
+
+type UserServiceMethods = {
+    getByEmail(email: string): Promise<User | null>;
+    exists(email: string): Promise<boolean>;
+}
+
+type UserAPIService = APIService<User, ExcludeKeys> & UserServiceMethods;
+
+export default UserAPIService;

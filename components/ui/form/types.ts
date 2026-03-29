@@ -1,10 +1,10 @@
-import FormFieldDTO from "@/core/view/DTO/form/form-field";
+import FormFieldDTO from "@/presentation/view/dto/form/form-field";
 import { UseFormWatch } from "react-hook-form";
 
-export interface LastStepProps<T extends Record<string, any>> {
+export interface LastStepProps<T extends Record<string, unknown>> {
     watch: UseFormWatch<T>;
     submit: () => Promise<void>;
     fields: FormFieldDTO<T>[];
 }
 
-export type LastStepContent<T extends Record<string, any>> = React.ReactNode | ((props: LastStepProps<T>) => React.ReactNode);
+export type LastStepContent<T extends Record<string, unknown>> = React.ReactNode | ((props: LastStepProps<T>) => React.ReactNode);
