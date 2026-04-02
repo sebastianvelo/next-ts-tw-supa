@@ -1,6 +1,6 @@
 "use client"
+import Brand from "@/components/ui/app/Brand";
 import Text from "@/components/ui/atoms/text/Text";
-import Title from "@/components/ui/atoms/title/Title";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface SidebarHeaderProps {
@@ -13,9 +13,7 @@ interface SidebarHeaderProps {
 const SidebarHeader: React.FC<SidebarHeaderProps> = ({ title, subtitle, isCollapsed, setIsCollapsed }) => (
     <div className="flex items-center p-6 shrink-0 min-h-[88px] relative">
         <div className={`flex flex-col overflow-hidden transition-all duration-300 ${isCollapsed ? "opacity-0 w-0" : "opacity-100 w-full"}`}>
-            <Title level="h4" size="md" className="font-bold text-secondary-900 dark:text-white truncate">
-                {title}
-            </Title>
+            <Brand />
             {subtitle && (
                 <Text size="xs" className="uppercase tracking-wider text-secondary-500 font-semibold truncate mt-1">
                     {subtitle}
