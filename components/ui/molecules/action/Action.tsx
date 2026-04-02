@@ -1,5 +1,5 @@
 "use client"
-import ActionDTO, { ActionType } from "@/presentation/view/dto/common/action";
+import ActionDTO, { ActionType } from "@/presentation/view/dto/molecules/action/dto";
 import React from "react";
 import ActionLink from "./variants/link/ActionLink";
 import ActionMutation from "./variants/mutation/ActionMutation";

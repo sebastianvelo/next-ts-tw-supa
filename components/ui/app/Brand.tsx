@@ -1,4 +1,4 @@
-import ROUTES from "@/routes/client";
+import ROUTES from "@/routes/view";
 import Link from "next/link";
 
 type BrandSize = "sm" | "lg" | "xl";
@@ -17,14 +17,22 @@ const Brand: React.FC<BrandProps> = ({ size = "xl" }) => {
     const commonStyles = `${textSize[size]} tracking-tighter font-black font-brand transition-all`;
 
     return (
-        <div className="flex flex-col group">
-            <Link href={ROUTES.USER.ROOT} className="flex items-center">
-                <span className={`${commonStyles} duration-200 -rotate-6 group-hover:-rotate-0 text-primary-400 group-hover:text-primary-500 dark:text-primary-400 dark:group-hover:text-primary-300`}>Kl</span>
-                <span className={`${commonStyles} duration-700 rotate-6 group-hover:rotate-0 text-primary-500 group-hover:text-primary-600 dark:text-primary-500 dark:group-hover:text-primary-400`}>as</span>
-                <span className={`${commonStyles} duration-500 rotate-6 group-hover:-rotate-12 text-primary-600 group-hover:text-primary-700 dark:text-primary-600 dark:group-hover:text-primary-500`}>s</span>
-            </Link>
-            <div className="px-4 rotate-0 group-hover:-rotate-2">
-                <div className="w-0 group-hover:w-full bg-gradient-to-r from-primary-500 to-primary-700 dark:from-primary-200 dark:to-primary-400 h-px transition-all duration-700 rounded-full"></div>
+        <div className="flex group">
+            <div>
+                <Link href={ROUTES.USER.ROOT} className="flex items-center">
+                    <span className={`${commonStyles} duration-200 -rotate-4 group-hover:-rotate-0 text-primary-400 group-hover:text-primary-500 dark:text-primary-400 dark:group-hover:text-primary-300`}>poll</span>
+                    <span className={`${commonStyles} duration-200 rotate-4 group-hover:rotate-0 text-primary-500 group-hover:text-primary-600 dark:text-primary-500 dark:group-hover:text-primary-400`}>.</span>
+                    <span className={`${commonStyles} duration-200 rotate-0 group-hover:-rotate-2 text-primary-600 group-hover:text-primary-700 dark:text-primary-600 dark:group-hover:text-primary-500`}>me</span>
+                </Link>
+                <div className="px-2 rotate-0 group-hover:-rotate-2">
+                    <div className="w-0 group-hover:w-full bg-gradient-to-r from-primary-500 to-primary-700 dark:from-primary-200 dark:to-primary-400 h-1 transition-all duration-700 rounded-full"></div>
+                </div>
+            </div>
+            <div className="px-8 rotate-0 group-hover:rotate-6">
+                <div className="w-0 group-hover:w-full bg-gradient-to-r from-primary-700 to-primary-900 dark:from-primary-200 dark:to-primary-400 h-1 transition-all duration-700 rounded-full"></div>
+            </div>
+            <div className="px-8 rotate-0 group-hover:-rotate-6">
+                <div className="w-0 group-hover:w-full bg-gradient-to-r from-primary-900 to-primary-900 dark:from-primary-200 dark:to-primary-400 h-1 transition-all duration-700 rounded-full"></div>
             </div>
         </div>
     );

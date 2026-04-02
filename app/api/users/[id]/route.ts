@@ -1,10 +1,10 @@
 import handleAPIRequest from "@/core/api/handleAPIRequest";
 import { APIResponse, ParamsId } from "@/core/api/types";
 import UserViewService from "@/modules/user/presentation/view";
-import UserLayoutViewDTO from "@/modules/user/presentation/view/builders/layout/dto";
+import UserHomeLayoutDTO from "@/modules/user/presentation/view/builders/layout/dto";
 
-export async function GET(_req: Request, { params }: ParamsId): APIResponse<UserLayoutViewDTO> {
+export async function GET(_req: Request, { params }: ParamsId): APIResponse<UserHomeLayoutDTO> {
     const { id } = await params;
 
-    return handleAPIRequest(async () => UserViewService.getLayoutView());
+    return handleAPIRequest(async () => UserViewService.getHomeLayout());
 }

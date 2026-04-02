@@ -4,7 +4,7 @@ import FormFieldDTO from "@/presentation/view/dto/form/form-field";
 import { FormProvider } from "react-hook-form";
 import CardBody from "../molecules/card/CardBody";
 import WizardStepsIndicator from "../organisms/wizard/indicator/WizardStepsIndicator";
-import AppFormActions from "./actions/AppFormActions";
+import FormActions from "./actions/FormActions";
 import FormFieldContainer from "./field/FormFieldContainer";
 
 interface FormProps<T extends Record<string, any>> {
@@ -49,7 +49,7 @@ const Form = <T extends Record<string, any>>({ fields, apiRoute, onSubmit, onSuc
             <form onSubmit={handleSubmit}>
                 {isWizard && (
                     <WizardStepsIndicator
-                        steps={fields.map((field) => field.label)}
+                        steps={fields.map((field) => field.label).filter(Boolean) as string[]}
                         goTo={wizard.handleNext}
                         currentStep={wizard.currentStep}
                         stepStatuses={stepStatuses}
@@ -66,7 +66,7 @@ const Form = <T extends Record<string, any>>({ fields, apiRoute, onSubmit, onSuc
                     </div>
                     {wizard.isLastStep && lastStepContent && renderLastStepContent()}
                 </CardBody>
-                <AppFormActions
+                <FormActions
                     {...props}
                     showSubmitButton={showSubmitButton}
                     isSubmitting={isSubmitting}

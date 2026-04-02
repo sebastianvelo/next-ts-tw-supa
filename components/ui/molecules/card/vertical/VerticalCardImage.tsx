@@ -1,4 +1,4 @@
-import CardDTO from "@/presentation/view/dto/molecules/card";
+import CardDTO from "@/presentation/view/dto/molecules/card/dto";
 import Image from "next/image";
 
 interface VerticalCardImageProps extends Pick<CardDTO, "img" | "title"> { }

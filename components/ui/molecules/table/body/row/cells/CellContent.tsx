@@ -1,5 +1,5 @@
 import Badge from "@/atoms/badge/Badge";
-import { TableCellDTO, TableCellType } from "@/presentation/view/dto/common/table";
+import { TableCellDTO, TableCellType } from "@/presentation/view/dto/molecules/table";
 import Link from "next/link";
 
 interface CellContentProps {

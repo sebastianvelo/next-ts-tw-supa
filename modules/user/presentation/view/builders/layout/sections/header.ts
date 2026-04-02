@@ -1,4 +1,4 @@
-import PageHeaderDTO from "@/presentation/view/dto/page/header";
+import PageHeaderDTO from "@/presentation/view/dto/main/header";
 import User from "@/modules/user/domain/model";
 
 const buildUserHeader = (user: User): PageHeaderDTO => ({

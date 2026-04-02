@@ -1,4 +1,4 @@
-import { createClient } from "@/core/db/supabase/SupabaseServer";
+import { createClient } from "@/db/supabase/SupabaseServer";
 import LoggingProxy from "@/core/logging/LoggingProxy";
 import ERRORS from "@/errors";
 import { AuthUserResponse } from "./types";

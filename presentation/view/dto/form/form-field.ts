@@ -3,7 +3,7 @@ import QuestionDTO from "./question";
 
 interface FormFieldDTO<T> {
     name: keyof T;
-    label: string;
+    label?: string;
     type: FormFieldType;
     defaultValue?: any;
     placeholder?: string;

@@ -1,7 +1,7 @@
 "use client"
 import Button from "@/atoms/button/Button";
 import Text from "@/atoms/text/Text";
-import ActionDTO from "@/presentation/view/dto/common/action";
+import ActionDTO from "@/presentation/view/dto/molecules/action/dto";
 import React from "react";
 import Modal from "@/components/ui/molecules/modal/Modal";
 import useAction from "./hooks/useActionMutation";

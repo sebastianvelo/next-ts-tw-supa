@@ -1,11 +1,11 @@
-import Select from "@/molecules/select/Select";
+import Select, { SelectType } from "@/molecules/select/Select";
 import { SelectOption } from "@/molecules/select/hooks/useSelectInput";
 import { FilterParam } from "../hooks/useFilterParam";
 
 interface FilterSelectFieldProps extends FilterParam {
     param: string;
     options?: SelectOption[];
-    type?: "select" | "combobox";
+    type?: SelectType;
 };
 
 const FilterSelectField: React.FC<FilterSelectFieldProps> = ({ options, param, current, set, type = "select" }) => (

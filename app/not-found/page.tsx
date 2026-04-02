@@ -1,6 +1,6 @@
 "use client"
-import PageContent from "@/components/layout/main/content/PageContent";
-import EmptySection from "@/layout/empty-section/EmptySection";
+import PageContent from "@/components/layout/content/PageContent";
+import EmptySection from "@/molecules/section/empty-section/EmptySection";
 import useNavigationError from "@/hooks/error/useNavigationError";
 
 const NotFoundPage: React.FC = () => {

@@ -1,4 +1,4 @@
-import { createClient } from "@/core/db/supabase/SupabaseServer";
+import { createClient } from "@/db/supabase/SupabaseServer";
 import Model from "@/core/model/Model";
 import BaseRepository from "@/core/repository";
 import PaginatedResult from "@/core/types/PaginatedResult";

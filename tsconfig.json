@@ -32,6 +32,9 @@
       "@/organisms/*": [
         "./components/ui/organisms/*"
       ],
+      "@/templates/*": [
+        "./components/ui/templates/*"
+      ],
       "@/form/*": [
         "./components/ui/form/*"
       ],
@@ -40,6 +43,12 @@
       ],
       "@/view/*": [
         "./components/view/*"
+      ],
+      "@/hooks/*": [
+        "./components/hooks/*"
+      ],
+      "@/context/*": [
+        "./components/context/*"
       ],
       "@/*": [
         "./*"

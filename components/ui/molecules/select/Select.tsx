@@ -7,6 +7,8 @@ import SelectOptions from "./SelectOptions";
 import SelectTrigger from "./SelectTrigger";
 import { syntheticOnChange } from "./utils";
 
+export type SelectType = "select" | "combobox";
+
 interface SelectProps {
     label?: string;
     name: string;
@@ -15,7 +17,7 @@ interface SelectProps {
     onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     options: SelectOption[];
     className?: string;
-    type?: "select" | "combobox";
+    type?: SelectType;
     placeholder?: string;
 }
 

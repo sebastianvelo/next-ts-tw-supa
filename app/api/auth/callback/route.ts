@@ -1,7 +1,7 @@
 import AuthService from "@/modules/auth/application/service";
 import UserService from "@/modules/user/application/service";
 import upsertFromOAuth from "@/modules/user/application/use-case/upsert-from-oauth";
-import ROUTES from "@/routes/client";
+import ROUTES from "@/routes/view";
 import { NextResponse } from "next/server";
 
 /**

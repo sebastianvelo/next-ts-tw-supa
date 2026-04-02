@@ -1,17 +1,17 @@
+import COMMON from "@/modules/layout/presentation/locales/common";
+import LOADING from "@/modules/layout/presentation/locales/loading";
+import NAVBAR from "@/modules/layout/presentation/locales/navbar";
+import USER from "@/modules/user/presentation/locales/wordings";
 import FORM from "./app/form/wordings";
-import COMMON from "./app/layout/common";
-import LOADING from "./app/layout/loading";
-import NAVBAR from "./app/layout/navbar";
 import LOGIN from "./app/login/wordings";
-import USER from "./app/user/wordings";
 
 const I18n = {
+    COMMON,
     NAVBAR,
+    LOADING,
     FORM,
     LOGIN,
-    LOADING,
     USER,
-    COMMON,
 } as const;
 
 export default I18n;

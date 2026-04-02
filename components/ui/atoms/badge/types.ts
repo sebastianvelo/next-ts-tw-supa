@@ -1,5 +1,4 @@
-import type { BadgeVariant } from "@/presentation/view/dto/common/badge";
-export type { BadgeVariant };
+import type { BadgeVariant } from "@/presentation/view/dto/atoms/badge/dto";
 
 export type BadgeSize = "xs" | "sm" | "md" | "lg" | "xl";
 

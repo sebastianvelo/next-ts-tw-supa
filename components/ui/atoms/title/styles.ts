@@ -1,6 +1,6 @@
 import { TitleAlign, TitleSize, TitleStyleProps, TitleVariant } from "./types";
 
-const baseStyles = "font-bold leading-tight";
+const baseStyles = "font-black leading-tight font-manrope";
 
 const sizes: Record<TitleSize, string> = {
     xs: "text-base xl:text-lg",

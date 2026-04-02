@@ -1,15 +1,15 @@
 const ENTITIES = {
-    USER: "user",
+    USERS: "users",
 };
 
 const ACTIONS = {
+    CREATE: "create",
 }
 
 const SEGMENTS = {
     NOT_FOUND: "not-found",
     LOGIN: "login",
     HOME: "home",
-    NEW: "new",
     ...ENTITIES,
     ...ACTIONS
 } as const;

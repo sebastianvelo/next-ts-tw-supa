@@ -1,4 +1,4 @@
-import PageNavigatorDTO from "@/presentation/view/dto/page/tabs";
+import PageTabDTO from "@/presentation/view/dto/main/tabs";
 
 export interface UserPageHeaderDTO {
     image?: string;
@@ -6,8 +6,9 @@ export interface UserPageHeaderDTO {
     subtitle?: string;
 }
 
-interface UserLayoutViewDTO extends PageNavigatorDTO {
+interface UserHomeLayoutDTO {
     header: UserPageHeaderDTO;
+    tabs?: PageTabDTO[];
 }
 
-export default UserLayoutViewDTO;
+export default UserHomeLayoutDTO;

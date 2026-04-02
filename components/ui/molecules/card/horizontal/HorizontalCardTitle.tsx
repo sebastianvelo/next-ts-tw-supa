@@ -1,6 +1,6 @@
 import Text from "@/atoms/text/Text";
 import Title from "@/atoms/title/Title";
-import CardDTO from "@/presentation/view/dto/molecules/card";
+import CardDTO from "@/presentation/view/dto/molecules/card/dto";
 import Link from "next/link";
 
 interface HorizontalCardTitleProps extends Pick<CardDTO, "href" | "title" | "subtitle"> { }

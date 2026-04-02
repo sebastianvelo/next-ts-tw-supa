@@ -1,15 +1,15 @@
 import User from "@/modules/user/domain/model";
-import UserLayoutViewDTO from "./dto";
+import UserHomeLayoutDTO from "./dto";
 import buildUserHeader from "./sections/header";
 import buildUserTabs from "./sections/tabs";
 
-type UserLayoutViewBuilderData = {
+type UserHomeLayoutBuilderData = {
     user: User;
 }
 
-const buildUserLayoutView = ({ user }: UserLayoutViewBuilderData): UserLayoutViewDTO => ({
+const buildUserHomeLayout = ({ user }: UserHomeLayoutBuilderData): UserHomeLayoutDTO => ({
     header: buildUserHeader(user),
     tabs: buildUserTabs()
 });
 
-export default buildUserLayoutView;
+export default buildUserHomeLayout;

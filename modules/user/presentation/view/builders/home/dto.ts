@@ -1,4 +1,4 @@
-import TextListSectionDTO from "@/presentation/view/dto/list-section/text-section";
+import TextListSectionDTO from "@/presentation/view/dto/molecules/section/text-section";
 
 interface UserHomeViewDTO extends TextListSectionDTO { }
 

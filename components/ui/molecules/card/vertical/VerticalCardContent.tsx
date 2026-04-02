@@ -1,6 +1,6 @@
 import Text from "@/atoms/text/Text";
 import CardBody from "@/molecules/card/CardBody";
-import CardDTO from "@/presentation/view/dto/molecules/card";
+import CardDTO from "@/presentation/view/dto/molecules/card/dto";
 
 interface VerticalCardContentProps extends Pick<CardDTO, "content"> { }
 

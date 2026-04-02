@@ -1,12 +1,13 @@
 import LoggingProxy from "@/core/logging/LoggingProxy";
-import { getUserHomeViewData, getUserLayoutViewData } from "@/modules/user/presentation/use-case";
-import { buildUserHomeView, buildUserLayoutView, UserHomeViewDTO, UserLayoutViewDTO } from "./builders";
+import { getUserHomeViewData, getUserLayoutViewData } from "../use-case";
+import { buildUserHomeView, buildUserHomeLayout, UserHomeViewDTO, UserHomeLayoutDTO } from "./builders";
 import IUserViewService from "./interface";
 
 class UserViewService implements IUserViewService {
-    async getLayoutView(): Promise<UserLayoutViewDTO> {
+
+    async getHomeLayout(): Promise<UserHomeLayoutDTO> {
         const data = await getUserLayoutViewData();
-        return buildUserLayoutView(data);
+        return buildUserHomeLayout(data);
     }
 
     async getHomeView(): Promise<UserHomeViewDTO> {

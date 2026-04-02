@@ -1,4 +1,4 @@
-import TABLES from "@/core/db/Tables";
+import TABLES from "@/db/Tables";
 import SupabaseRepository from "@/core/repository/supabase";
 import User from "@/modules/user/domain/model";
 import UserKeys from "@/modules/user/domain/model/keys";

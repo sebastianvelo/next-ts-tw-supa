@@ -1,6 +1,6 @@
 import Text from "@/atoms/text/Text";
-import FilterFieldDTO, { FilterFieldType } from "@/presentation/view/dto/filter/filter-field";
-import Dropdown from "../dropdown/Dropdown";
+import Dropdown from "@/molecules/dropdown/Dropdown";
+import FilterFieldDTO, { FilterFieldType } from "@/presentation/view/dto/molecules/filter/dto";
 import useFilterParam from "./hooks/useFilterParam";
 import FilterBadgeField from "./variants/FilterBadgeField";
 import FilterInputField from "./variants/FilterInputField";

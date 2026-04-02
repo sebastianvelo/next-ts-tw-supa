@@ -1,4 +1,4 @@
-import { TableCellDTO } from "@/presentation/view/dto/common/table";
+import { TableCellDTO } from "@/presentation/view/dto/molecules/table";
 import useI18N from "@/hooks/lang/useI18N";
 import CellContent from "./CellContent";
 

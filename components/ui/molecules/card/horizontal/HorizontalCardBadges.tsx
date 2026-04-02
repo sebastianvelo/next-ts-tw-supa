@@ -1,5 +1,5 @@
 import Badge from "@/atoms/badge/Badge";
-import BadgeDTO from "@/presentation/view/dto/common/badge";
+import BadgeDTO from "@/presentation/view/dto/atoms/badge/dto";
 
 interface HorizontalCardBadgesProps {
     badges?: BadgeDTO[];

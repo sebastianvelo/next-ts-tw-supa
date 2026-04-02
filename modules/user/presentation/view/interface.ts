@@ -1,7 +1,7 @@
-import { UserHomeViewDTO, UserLayoutViewDTO } from "./builders";
+import { UserHomeViewDTO, UserHomeLayoutDTO } from "./builders";
 
 interface IUserViewService {
-    getLayoutView(): Promise<UserLayoutViewDTO>;
+    getHomeLayout(): Promise<UserHomeLayoutDTO>;
     getHomeView(): Promise<UserHomeViewDTO>;
 }
 

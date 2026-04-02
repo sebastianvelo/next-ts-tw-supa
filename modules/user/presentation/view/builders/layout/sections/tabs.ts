@@ -1,6 +1,6 @@
 import I18n from "@/locales/I18nKeys";
-import { PageTabDTO } from "@/presentation/view/dto/page/tabs";
-import ROUTES from "@/routes/client";
+import { PageTabDTO } from "@/presentation/view/dto/main/tabs";
+import ROUTES from "@/routes/view";
 
 const buildUserTabs = (): PageTabDTO[] => [
     { label: I18n.USER.LAYOUT.TABS.ABOUT, href: ROUTES.USER.ROOT },

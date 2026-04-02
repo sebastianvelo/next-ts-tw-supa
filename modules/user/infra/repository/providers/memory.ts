@@ -1,5 +1,5 @@
-import MemoryClient from "@/core/db/memory/MemoryClient";
-import TABLES from "@/core/db/Tables";
+import MemoryClient from "@/db/memory/MemoryClient";
+import TABLES from "@/db/Tables";
 import LoggingProxy from "@/core/logging/LoggingProxy";
 import MemoryRepository from "@/core/repository/memory";
 import User from "@/modules/user/domain/model";
