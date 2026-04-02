@@ -1,6 +1,6 @@
 import PageContent from "@/components/layout/content/PageContent";
 import Tabs from "@/molecules/tabs/Tabs";
-import TabDTO from "@/presentation/view/dto/molecules/tab/dto";
+import TabDTO from "@/presentation/view/models/molecules/tab/dto";
 import { getTabs } from "./utils";
 
 interface PageTabsViewProps {

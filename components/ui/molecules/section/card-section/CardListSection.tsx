@@ -5,7 +5,7 @@ import { FallbackProps } from "@/molecules/section/fallback/Fallback";
 import HorizontalCard from "@/molecules/card/horizontal/HorizontalCard";
 import MiniCard from "@/molecules/card/mini/MiniCard";
 import VerticalCard from "@/molecules/card/vertical/VerticalCard";
-import CardListSectionDTO from "@/presentation/view/dto/molecules/section/card-list-section";
+import CardListSectionDTO from "@/presentation/view/models/molecules/section/card-list-section";
 import { CardType } from "./types";
 
 const CardMap = {

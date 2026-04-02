@@ -1,7 +1,7 @@
 import Avatar from "@/atoms/avatar/Avatar";
 import Text from "@/atoms/text/Text";
 import Title from "@/atoms/title/Title";
-import PageHeaderDTO from "@/presentation/view/dto/main/header";
+import PageHeaderDTO from "@/presentation/view/models/main/header";
 
 export interface HeaderContentProps extends Pick<PageHeaderDTO, "title" | "subtitle" | "content" | "image"> { }
 

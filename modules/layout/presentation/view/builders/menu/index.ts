@@ -1,5 +1,5 @@
-import ActionDTO, { ActionType, ActionVariant } from "@/presentation/view/dto/molecules/action/dto";
-import SidebarDTO, { SidebarOptionDTO } from "@/presentation/view/dto/organisms/sidebar";
+import ActionDTO, { ActionType, ActionVariant } from "@/presentation/view/models/molecules/action/dto";
+import SidebarDTO, { SidebarOptionDTO } from "@/presentation/view/models/organisms/sidebar/dto";
 import Icons from "@/presentation/view/registry/icon-type";
 
 const bodyOptions: SidebarOptionDTO[] = [

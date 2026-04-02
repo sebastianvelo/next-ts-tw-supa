@@ -1,6 +1,6 @@
 "use client"
 import Button from "@/atoms/button/Button";
-import { ActionVariant } from "@/presentation/view/dto/molecules/action/dto";
+import { ActionVariant } from "@/presentation/view/models/molecules/action/dto";
 import Link from "next/link";
 import React from "react";
 

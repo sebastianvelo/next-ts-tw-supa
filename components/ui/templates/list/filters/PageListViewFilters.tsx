@@ -1,5 +1,5 @@
 "use client"
-import FilterFieldDTO from "@/presentation/view/dto/molecules/filter/dto";
+import FilterFieldDTO from "@/presentation/view/models/molecules/filter/dto";
 import PageListViewFiltersDesktop from "./desktop/PageListViewFiltersDesktop";
 import PageListViewFiltersMobile from "./mobile/PageListViewFiltersMobile";
 import { FiltersConfig } from "./types";

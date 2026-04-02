@@ -1,5 +1,5 @@
 import Button from "@/atoms/button/Button";
-import PageHeaderDTO from "@/presentation/view/dto/main/header";
+import PageHeaderDTO from "@/presentation/view/models/main/header";
 import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 

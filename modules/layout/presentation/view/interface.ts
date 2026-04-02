@@ -1,4 +1,4 @@
-import SidebarDTO from "@/presentation/view/dto/organisms/sidebar";
+import SidebarDTO from "@/presentation/view/models/organisms/sidebar/dto";
 
 interface ILayoutViewService {
     getMenu(): Promise<SidebarDTO>;

@@ -1,5 +1,5 @@
 import Button from "@/atoms/button/Button";
-import PaginatorDTO from "@/presentation/view/dto/molecules/paginator/dto";
+import PaginatorDTO from "@/presentation/view/models/molecules/paginator/dto";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import usePaginator from "./hooks/usePaginator";
 

@@ -2,7 +2,7 @@
 import Button from "@/atoms/button/Button";
 import FormFieldContainer from "@/form/field/FormFieldContainer";
 import Card from "@/molecules/card/Card";
-import FormFieldDTO from "@/presentation/view/dto/form/form-field";
+import FormFieldDTO from "@/presentation/view/models/form/form-field";
 import { TrashIcon } from "lucide-react";
 import { FieldValues, UseFieldArrayRemove } from "react-hook-form";
 

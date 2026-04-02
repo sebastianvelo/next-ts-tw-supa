@@ -1,4 +1,4 @@
-import FormFieldDTO from "@/presentation/view/dto/form/form-field";
+import FormFieldDTO from "@/presentation/view/models/form/form-field";
 
 interface FormDTO<T> {
     title?: string;

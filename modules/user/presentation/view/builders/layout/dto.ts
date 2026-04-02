@@ -1,4 +1,4 @@
-import PageTabDTO from "@/presentation/view/dto/main/tabs";
+import PageTabDTO from "@/presentation/view/models/main/tabs";
 
 export interface UserPageHeaderDTO {
     image?: string;

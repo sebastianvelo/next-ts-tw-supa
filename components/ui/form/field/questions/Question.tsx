@@ -2,7 +2,7 @@ import Text from "@/atoms/text/Text";
 import QuestionType from "@/modules/question/domain/model/enum/question-type";
 import CardBody from "@/molecules/card/CardBody";
 import QUESTION_COMPONENTS from "@/molecules/question/QuestionComponent";
-import QuestionDTO from "@/presentation/view/dto/form/question";
+import QuestionDTO from "@/presentation/view/models/form/question";
 
 export interface QuestionProps extends QuestionDTO<QuestionType> {
   value?: string | string[];

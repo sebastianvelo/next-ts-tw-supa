@@ -1,5 +1,5 @@
 import PageHeader from "@/components/layout/main/header/PageHeader";
-import PageLayoutDTO from "@/presentation/view/dto/main/layout";
+import PageLayoutDTO from "@/presentation/view/models/main/layout";
 import PageTabs from "./navigator/PageTabs";
 
 interface PageLayoutProps extends PageLayoutDTO, React.PropsWithChildren { }

@@ -1,4 +1,4 @@
-import type { BadgeVariant } from "@/presentation/view/dto/atoms/badge/dto";
+import type { BadgeVariant } from "@/presentation/view/models/atoms/badge/dto";
 
 export type BadgeSize = "xs" | "sm" | "md" | "lg" | "xl";
 

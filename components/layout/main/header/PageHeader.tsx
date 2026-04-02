@@ -1,5 +1,5 @@
 import Breadcrumb from "@/molecules/breadcrumb/Breadcrumb";
-import PageHeaderDTO from "@/presentation/view/dto/main/header";
+import PageHeaderDTO from "@/presentation/view/models/main/header";
 import HeaderActions from "./actions/HeaderActions";
 import HeaderBackButton from "./actions/HeaderBackButton";
 import HeaderButtons from "./actions/HeaderButtons";

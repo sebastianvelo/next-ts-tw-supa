@@ -1,4 +1,4 @@
-import PageHeaderDTO from "@/presentation/view/dto/main/header";
+import PageHeaderDTO from "@/presentation/view/models/main/header";
 import UIType from "@/presentation/view/registry/ui-type";
 
 export interface MultiSectionViewItemDTO<TContent extends object> {

@@ -1,6 +1,6 @@
 import Tab from "@/molecules/tabs/tab/Tab";
 import { TabType } from "@/molecules/tabs/tab/types";
-import { PageTabDTO } from "@/presentation/view/dto/main/tabs";
+import { PageTabDTO } from "@/presentation/view/models/main/tabs";
 import { usePathname } from "next/navigation";
 import { nestedClassName, parentClassName } from "./styles";
 

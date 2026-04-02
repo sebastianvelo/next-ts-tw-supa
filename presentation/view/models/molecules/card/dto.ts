@@ -1,5 +1,5 @@
-import ActionDTO from "@/presentation/view/dto/molecules/action/dto";
-import BadgeDTO from "@/presentation/view/dto/atoms/badge/dto";
+import ActionDTO from "@/presentation/view/models/molecules/action/dto";
+import BadgeDTO from "@/presentation/view/models/atoms/badge/dto";
 
 export enum BadgePosition {
     TOP_RIGHT = "tr",

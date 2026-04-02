@@ -1,5 +1,5 @@
 import { ResponseFetchError } from "@/core/errors";
-import ListViewDTO from "@/presentation/view/dto/templates/list-view";
+import ListViewDTO from "@/presentation/view/models/templates/list-view";
 import { useEffect, useState } from "react";
 import useFetchCurrentView from "./useFetchCurrentView";
 

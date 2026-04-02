@@ -1,6 +1,6 @@
 "use client"
 import Action from "@/molecules/action/Action";
-import ActionDTO from "@/presentation/view/dto/molecules/action/dto";
+import ActionDTO from "@/presentation/view/models/molecules/action/dto";
 import { SidebarOptions } from "../types";
 import SidebarLink from "./SidebarLink";
 

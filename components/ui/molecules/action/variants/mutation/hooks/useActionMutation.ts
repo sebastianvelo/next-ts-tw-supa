@@ -3,7 +3,7 @@ import HttpMethod from "@/core/types/HttpMethod";
 import useMutation from "@/hooks/api/useMutation";
 import useI18N from "@/hooks/lang/useI18N";
 import useToast from "@/components/ui/molecules/toast/hooks/useToast";
-import ActionDTO from "@/presentation/view/dto/molecules/action/dto";
+import ActionDTO from "@/presentation/view/models/molecules/action/dto";
 import { useRouter } from "next/navigation";
 
 type UseActionProps = Omit<ActionDTO, "type" | "variant">;

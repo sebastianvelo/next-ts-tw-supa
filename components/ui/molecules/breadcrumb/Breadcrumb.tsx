@@ -1,4 +1,4 @@
-import BreadcrumbDTO from "@/presentation/view/dto/molecules/breadcrumb/dto";
+import BreadcrumbDTO from "@/presentation/view/models/molecules/breadcrumb/dto";
 import BreadcrumbItem from "./item/BreadcrumbItem";
 
 interface BreadcrumbProps extends BreadcrumbDTO {

@@ -1,4 +1,4 @@
-import { TableHeaderDTO, TableRowDTO } from "@/presentation/view/dto/molecules/table";
+import { TableHeaderDTO, TableRowDTO } from "@/presentation/view/models/molecules/table/dto";
 import React from "react";
 import EmptyTable from "./EmptyTable";
 import TableRow from "./row/TableRow";

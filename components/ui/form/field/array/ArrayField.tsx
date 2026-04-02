@@ -2,7 +2,7 @@
 import Button from "@/atoms/button/Button";
 import Text from "@/atoms/text/Text";
 import { FormFieldType } from "@/presentation/forms/types";
-import FormFieldDTO from "@/presentation/view/dto/form/form-field";
+import FormFieldDTO from "@/presentation/view/models/form/form-field";
 import useI18N from "@/hooks/lang/useI18N";
 import { PlusIcon } from "lucide-react";
 import { FieldValues, useFieldArray, useFormContext } from "react-hook-form";

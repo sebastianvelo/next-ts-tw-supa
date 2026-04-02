@@ -1,5 +1,5 @@
 import LoggingProxy from "@/core/logging/LoggingProxy";
-import SidebarDTO from "@/presentation/view/dto/organisms/sidebar";
+import SidebarDTO from "@/presentation/view/models/organisms/sidebar/dto";
 import buildMenu from "./builders/menu";
 import ILayoutViewService from "./interface";
 

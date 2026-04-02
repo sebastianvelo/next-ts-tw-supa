@@ -4,7 +4,7 @@ import ArrayField from "@/form/field/array/ArrayField";
 import Question from "@/form/field/questions/Question";
 import Select from "@/molecules/select/Select";
 import { FormFieldType } from "@/presentation/forms/types";
-import FormFieldDTO from "@/presentation/view/dto/form/form-field";
+import FormFieldDTO from "@/presentation/view/models/form/form-field";
 import { Controller, FieldValues, Path, useFormContext } from "react-hook-form";
 
 const FieldComponent = (type: FormFieldType) => {

@@ -1,7 +1,7 @@
 import PageListView, { IPageListViewProps } from "@/templates/list/PageListView";
 import CardListSection from "@/molecules/section/card-section/CardListSection";
 import EmptySection from "@/molecules/section/empty-section/EmptySection";
-import CardListSectionDTO from "@/presentation/view/dto/molecules/section/card-list-section";
+import CardListSectionDTO from "@/presentation/view/models/molecules/section/card-list-section";
 
 interface PageCardListViewProps extends IPageListViewProps<CardListSectionDTO> { }
 

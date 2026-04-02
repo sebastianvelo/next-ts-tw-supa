@@ -2,7 +2,7 @@
 import Sidebar from "@/components/ui/organisms/sidebar";
 import useFetchView from "@/hooks/view/useFetchView";
 import Loading from "@/molecules/loading/Loading";
-import SidebarDTO from "@/presentation/view/dto/organisms/sidebar";
+import SidebarDTO from "@/presentation/view/models/organisms/sidebar/dto";
 import API from "@/routes/api";
 
 const Navbar: React.FC = () => {

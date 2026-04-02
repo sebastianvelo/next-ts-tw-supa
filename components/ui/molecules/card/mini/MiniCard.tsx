@@ -1,6 +1,6 @@
 import Text from "@/atoms/text/Text";
 import Title from "@/atoms/title/Title";
-import CardDTO from "@/presentation/view/dto/molecules/card/dto";
+import CardDTO from "@/presentation/view/models/molecules/card/dto";
 
 interface MiniCardProps extends CardDTO { }
 

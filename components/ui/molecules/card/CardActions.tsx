@@ -1,4 +1,4 @@
-import ActionDTO from "@/presentation/view/dto/molecules/action/dto";
+import ActionDTO from "@/presentation/view/models/molecules/action/dto";
 import Action from "../action/Action";
 import CardFooter from "./CardFooter";
 

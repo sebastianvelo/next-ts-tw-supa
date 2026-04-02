@@ -1,6 +1,6 @@
 import Text from "@/atoms/text/Text";
 import Title from "@/atoms/title/Title";
-import TextListSectionDTO from "@/presentation/view/dto/molecules/section/text-section";
+import TextListSectionDTO from "@/presentation/view/models/molecules/section/text-section";
 
 interface TextListSectionProps extends TextListSectionDTO {
     className?: string;

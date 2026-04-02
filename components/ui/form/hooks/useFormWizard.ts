@@ -1,4 +1,4 @@
-import FormFieldDTO from "@/presentation/view/dto/form/form-field";
+import FormFieldDTO from "@/presentation/view/models/form/form-field";
 import { useState, useEffect } from "react";
 import { UseFormTrigger } from "react-hook-form";
 

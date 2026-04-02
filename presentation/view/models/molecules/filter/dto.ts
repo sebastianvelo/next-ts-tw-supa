@@ -1,5 +1,5 @@
-import BadgeDTO from "@/presentation/view/dto/atoms/badge/dto";
-import SelectOptionDTO from "@/presentation/view/dto/molecules/select/select-option";
+import BadgeDTO from "@/presentation/view/models/atoms/badge/dto";
+import SelectOptionDTO from "@/presentation/view/models/molecules/select/select-option";
 
 export enum FilterFieldType {
     BADGE = "badge",

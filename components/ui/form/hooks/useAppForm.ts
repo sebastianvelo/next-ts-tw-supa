@@ -1,4 +1,4 @@
-import FormFieldDTO from "@/presentation/view/dto/form/form-field";
+import FormFieldDTO from "@/presentation/view/models/form/form-field";
 import usePost from "@/hooks/api/usePost";
 import { Control, FieldErrors, useForm, UseFormRegister, UseFormReset, UseFormReturn, UseFormSetValue, UseFormTrigger, UseFormWatch } from "react-hook-form";
 import useFormWizard, { FormWizard } from "./useFormWizard";

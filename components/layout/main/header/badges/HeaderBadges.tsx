@@ -1,5 +1,5 @@
 import Badge from "@/atoms/badge/Badge";
-import PageHeaderDTO from "@/presentation/view/dto/main/header";
+import PageHeaderDTO from "@/presentation/view/models/main/header";
 
 export interface HeaderBadgesProps extends Pick<PageHeaderDTO, "badges"> { }
 

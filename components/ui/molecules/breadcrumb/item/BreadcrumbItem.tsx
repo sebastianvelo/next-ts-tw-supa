@@ -1,5 +1,5 @@
 import Text, { TextProps } from "@/atoms/text/Text";
-import { BreadcrumbItemDTO } from "@/presentation/view/dto/molecules/breadcrumb/dto";
+import { BreadcrumbItemDTO } from "@/presentation/view/models/molecules/breadcrumb/dto";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { baseStyles, baseAfterStyles, activeAfterStyles, inactiveAfterStyles } from "./styles";

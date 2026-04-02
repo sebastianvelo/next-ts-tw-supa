@@ -1,5 +1,5 @@
-import { TableDataDTO } from "@/presentation/view/dto/molecules/table";
 import useTable from "@/molecules/table/hooks/useTable";
+import { TableDataDTO } from "@/presentation/view/models/molecules/table/dto";
 import React from "react";
 import TableBody from "./body/TableBody";
 import TableHeader from "./header/TableHeader";

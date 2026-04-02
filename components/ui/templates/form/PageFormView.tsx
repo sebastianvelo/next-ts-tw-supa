@@ -4,7 +4,7 @@ import Form from "@/form/Form";
 import { LastStepContent } from "@/form/types";
 import useToast from "@/molecules/toast/hooks/useToast";
 import Card from "@/molecules/card/Card";
-import FormViewDTO from "@/presentation/view/dto/form/form-view";
+import FormViewDTO from "@/presentation/view/models/form/form-view";
 import Text from "@/atoms/text/Text";
 
 interface PageFormViewProps<T extends Record<string, any>> extends FormViewDTO<T> {

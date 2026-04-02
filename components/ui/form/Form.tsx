@@ -1,6 +1,6 @@
 import useAppForm from "@/form/hooks/useAppForm";
 import { LastStepContent } from "@/form/types";
-import FormFieldDTO from "@/presentation/view/dto/form/form-field";
+import FormFieldDTO from "@/presentation/view/models/form/form-field";
 import { FormProvider } from "react-hook-form";
 import CardBody from "../molecules/card/CardBody";
 import WizardStepsIndicator from "../organisms/wizard/indicator/WizardStepsIndicator";

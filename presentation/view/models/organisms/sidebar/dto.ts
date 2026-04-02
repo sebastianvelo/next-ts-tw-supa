@@ -1,5 +1,5 @@
+import ActionDTO from "@/presentation/view/models/molecules/action/dto";
 import Icons from "@/presentation/view/registry/icon-type";
-import ActionDTO from "../molecules/action/dto";
 
 export interface SidebarOptionDTO {
     label: string;

@@ -1,4 +1,4 @@
-import { BadgeVariant } from "@/presentation/view/dto/atoms/badge/dto";
+import { BadgeVariant } from "@/presentation/view/models/atoms/badge/dto";
 
 export interface TableHeaderDTO {
     key: string;

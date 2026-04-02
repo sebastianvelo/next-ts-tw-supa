@@ -1,4 +1,4 @@
-import { TableDataDTO, TableHeaderDTO } from "@/presentation/view/dto/molecules/table";
+import { TableDataDTO, TableHeaderDTO } from "@/presentation/view/models/molecules/table/dto";
 import QueryParam from "@/routes/types/params.routes";
 import { ChevronDown, ChevronsUpDown, ChevronUp } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";

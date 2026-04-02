@@ -1,7 +1,7 @@
 import Card from "@/molecules/card/Card";
 import CardActions from "@/molecules/card/CardActions";
 import CardHeader from "@/molecules/card/CardHeader";
-import CardDTO, { BadgePosition } from "@/presentation/view/dto/molecules/card/dto";
+import CardDTO, { BadgePosition } from "@/presentation/view/models/molecules/card/dto";
 import VerticalCardBadges from "./VerticalCardBadges";
 import VerticalCardContent from "./VerticalCardContent";
 import VerticalCardImage from "./VerticalCardImage";

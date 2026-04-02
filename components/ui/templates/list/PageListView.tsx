@@ -3,7 +3,7 @@ import { FallbackProps } from "@/molecules/section/fallback/Fallback";
 import Loading from "@/molecules/loading/Loading";
 import Paginator from "@/molecules/paginator/Paginator";
 import { getGridCols } from "@/presentation/view/constants/layout";
-import ListViewDTO from "@/presentation/view/dto/templates/list-view";
+import ListViewDTO from "@/presentation/view/models/templates/list-view";
 import PageListViewFilters from "./filters/PageListViewFilters";
 import { PageListViewConfig, PageListViewLayout } from "./types";
 

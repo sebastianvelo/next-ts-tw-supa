@@ -1,4 +1,4 @@
-import TabDTO from "@/presentation/view/dto/molecules/tab/dto";
+import TabDTO from "@/presentation/view/models/molecules/tab/dto";
 import getComponent from "..";
 import { TabItem } from "@/molecules/tabs/types";
 

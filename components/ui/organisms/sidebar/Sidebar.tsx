@@ -1,5 +1,5 @@
 "use client"
-import ActionDTO from "@/presentation/view/dto/molecules/action/dto";
+import ActionDTO from "@/presentation/view/models/molecules/action/dto";
 import { useState } from "react";
 import SidebarBody from "./body/SidebarBody";
 import SidebarHeader from "./header/SidebarHeader";

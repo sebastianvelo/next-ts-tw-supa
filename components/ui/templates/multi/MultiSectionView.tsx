@@ -1,7 +1,7 @@
 "use client"
 import PageContent from "@/components/layout/content/PageContent";
 import PageHeader from "@/components/layout/main/header/PageHeader";
-import PageHeaderDTO from "@/presentation/view/dto/main/header";
+import PageHeaderDTO from "@/presentation/view/models/main/header";
 import UIType from "@/presentation/view/registry/ui-type";
 import PageTabsView from "@/templates/tabs/PageTabsView";
 import React, { useState } from "react";
