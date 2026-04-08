@@ -25,7 +25,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "poll.me",
+  title: "demo",
   description: "Create and share polls with the world.",
 };
 

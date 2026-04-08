@@ -8,27 +8,26 @@ export enum FilterFieldType {
     COMBOBOX = "combobox"
 }
 
-type FilterFieldDTO =
-    | {
-        title?: string;
-        param: string;
-        options?: BadgeDTO[];
-        type?: FilterFieldType.BADGE;
-        placeholder?: string;
-    }
-    | {
-        title?: string;
-        param: string;
-        options?: SelectOptionDTO[];
-        type?: FilterFieldType.SELECT | FilterFieldType.COMBOBOX;
-        placeholder?: string;
-    }
-    | {
-        title?: string;
-        param: string;
-        type?: FilterFieldType.INPUT;
-        inputType?: string;
-        placeholder?: string;
-    };
+type BaseFilterFieldDTO<T> = {
+    title?: string;
+    param: string;
+    type: T;
+}
+
+type BadgeFilterFieldDTO = BaseFilterFieldDTO<FilterFieldType.BADGE> & {
+    options?: BadgeDTO[];
+}
+
+type SelectFilterFieldDTO = BaseFilterFieldDTO<FilterFieldType.SELECT | FilterFieldType.COMBOBOX> & {
+    options?: SelectOptionDTO[];
+    placeholder?: string;
+}
+
+type InputFilterFieldDTO = BaseFilterFieldDTO<FilterFieldType.INPUT> & {
+    inputType?: string;
+    placeholder?: string;
+}
+
+type FilterFieldDTO = BadgeFilterFieldDTO | SelectFilterFieldDTO | InputFilterFieldDTO;
 
 export default FilterFieldDTO;

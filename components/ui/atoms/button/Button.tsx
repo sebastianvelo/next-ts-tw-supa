@@ -8,12 +8,12 @@ export interface ButtonProps extends ButtonStyleProps, React.ButtonHTMLAttribute
     t?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ t, variant, size, children, className = "", type = "button", ...props }) => {
+const Button: React.FC<ButtonProps> = ({ t, variant, size, rounded, children, className = "", type = "button", ...props }) => {
     const { t: translate } = useI18N();
     const content = t ? translate(t) : children;
 
     return (
-        <button className={`${getStyle({ variant, size })} ${className}`} type={type} {...props}>
+        <button className={`${getStyle({ variant, size, rounded })} ${className}`} type={type} {...props}>
             {content}
         </button>
     );

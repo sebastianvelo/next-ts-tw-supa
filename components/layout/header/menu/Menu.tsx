@@ -1,4 +1,4 @@
-import PageTabs from "@/components/layout/main/navigator/PageTabs";
+import PageTabs from "@/components/layout/main/tabs/PageTabs";
 import { TabType } from "@/molecules/tabs/tab/types";
 import tabs from "./tabs";
 

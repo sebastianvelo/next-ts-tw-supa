@@ -1,9 +1,13 @@
+import TabType from "@/presentation/view/registry/tab-type";
 import PageHeaderDTO from "./header";
 import PageTabDTO from "./tabs";
 
-interface PageLayoutDTO<ActionContext = any> {
+interface LayoutDTO<ActionContext = any> {
   header: PageHeaderDTO;
-  tabs?: PageTabDTO<ActionContext>[];
+  tabs?: {
+    tabs: PageTabDTO<ActionContext>[];
+    type: TabType;
+  }
 }
 
-export default PageLayoutDTO;
+export default LayoutDTO;

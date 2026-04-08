@@ -24,7 +24,9 @@ export interface TableRowDTO {
     [key: string]: TableCellDTO | string | number | boolean | null | undefined;
 }
 
-export interface TableDataDTO {
+interface TableDataDTO {
     headers: TableHeaderDTO[];
     body: TableRowDTO[];
 }
+
+export default TableDataDTO;
